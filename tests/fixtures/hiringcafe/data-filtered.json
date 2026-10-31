@@ -1,0 +1,1081 @@
+{
+  "__N_SSP": true,
+  "pageProps": {
+    "ssrHits": [
+      {
+        "attributed_org_card": null,
+        "v5_processed_job_data": {
+          "security_clearance": "None",
+          "masters_degree_requirement": "Not Mentioned",
+          "bi-weekly_min_compensation": 2500,
+          "oral_communication_level": "Medium",
+          "workplace_physical_environment": "Office",
+          "hourly_max_compensation": 37.98076923076923,
+          "overnight_work": "Not Indicated",
+          "is_driver_license_required": false,
+          "boundless_workplace_states": [],
+          "number_of_workplace_states": 1,
+          "retirement_plan": true,
+          "workplace_continents": [
+            "North America"
+          ],
+          "is_workplace_worldwide_ok": false,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "monthly_min_compensation": 5416.666666666667,
+          "military_veterans": false,
+          "is_compensation_transparent": true,
+          "land_travel_requirement": "None",
+          "is_high_school_required": true,
+          "number_of_workplace_continents": 1,
+          "company_name": "Invenergy LLC",
+          "workplace_cities": [
+            "Denver, Colorado, US"
+          ],
+          "401k_matching": false,
+          "cognitive_demand": "High",
+          "estimated_publish_date_millis": 1793437527589,
+          "fair_chance": false,
+          "associates_degree_requirement": "Not Mentioned",
+          "number_of_workplace_counties": 1,
+          "core_job_title": "Geospatial Analyst",
+          "weekend_availability_required": false,
+          "monthly_max_compensation": 6583.333333333333,
+          "doctorate_degree_requirement": "Not Mentioned",
+          "company_website": null,
+          "licenses_or_certifications": [],
+          "number_of_workplace_countries": 1,
+          "evening_shift_work": "Not Indicated",
+          "visa_sponsorship": false,
+          "daily_max_compensation": 303.84615384615387,
+          "workplace_countries": [
+            "US"
+          ],
+          "role_activities": [
+            "creating maps",
+            "managing GIS data",
+            "supporting project workflows"
+          ],
+          "holiday_availability_required": false,
+          "role_type": "Individual Contributor",
+          "physical_position": "Sitting",
+          "listed_compensation_currency": "USD",
+          "four_day_work_week": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "bachelors_degree_requirement": "Required",
+          "weekly_max_compensation": 1519.2307692307693,
+          "weekly_min_compensation": 1250,
+          "boundless_workplace_continents": [],
+          "generous_parental_leave": false,
+          "job_category": "Data and Analytics",
+          "workplace_type": "Hybrid",
+          "computer_usage": "High",
+          "relocation_assistance": false,
+          "generous_paid_time_off": true,
+          "boundless_workplace_countries": [],
+          "air_travel_requirement": "None",
+          "company_tagline": null,
+          "workplace_counties": [
+            "Denver County, Colorado, US"
+          ],
+          "language_requirements": [
+            "English"
+          ],
+          "hourly_min_compensation": 31.25,
+          "daily_min_compensation": 250,
+          "company_activities": null,
+          "bi-weekly_max_compensation": 3038.4615384615386,
+          "num_language_requirements": 1,
+          "company_sector_and_industry": null,
+          "commitment": [
+            "Full Time"
+          ],
+          "doctorate_degree_fields_of_study": [],
+          "requirements_summary": "Bachelor's degree in Geography, GIS, Environmental Science or related field; proficiency with ESRI software (ArcGIS Pro, ArcGIS Online/Enterprise); strong organizational and communication skills; eligible to work in the US without visa sponsorship.",
+          "tuition_reimbursement": false,
+          "masters_degree_fields_of_study": [],
+          "overtime_required": false,
+          "formatted_workplace_location": "Denver, Colorado, United States",
+          "number_of_workplace_cities": 1,
+          "technical_tools": [
+            "ArcGIS Pro",
+            "ArcGIS Online",
+            "ArcGIS Enterprise",
+            "Python",
+            "SQL"
+          ],
+          "workplace_states": [
+            "Colorado, US"
+          ],
+          "licenses_or_certifications_not_mentioned": true,
+          "seniority_level": "Entry Level",
+          "min_industry_and_role_yoe": null,
+          "physical_labor_intensity": "Low",
+          "listed_compensation_frequency": "Yearly",
+          "on_call_requirement": "None",
+          "min_management_and_leadership_yoe": null,
+          "bachelors_degree_fields_of_study": [
+            "geography",
+            "gis",
+            "environmental science"
+          ],
+          "yearly_max_compensation": 79000,
+          "position_employer_type": "Internal Position",
+          "morning_shift_work": "Not Indicated",
+          "estimated_publish_date": "2026-10-31T09:05:27.589Z",
+          "yearly_min_compensation": 65000,
+          "associates_degree_fields_of_study": []
+        },
+        "hc_indexed_at": "2026-10-31T16:59:52.915016543Z",
+        "source_and_board_token": "eightfold_jobs.connectingcolorado.gov",
+        "job_information": {
+          "savedFromUsers": [],
+          "num_views": 3,
+          "job_title_raw": "\tAnalyst, Geospatial (GIS)",
+          "viewedByUsers": [],
+          "num_saves": 1,
+          "title": "\tAnalyst, Geospatial (GIS)"
+        },
+        "original_source_id": "844768669478596",
+        "strict_dedup_cluster_id": "eightfold___jobs.connectingcolorado.gov___844768669478596",
+        "liberal_dedup_cluster": "workday___invenergyllc-wd1-invenergyllc___analyst--geospatial--gis-_r11273",
+        "source": "eightfold",
+        "collapse_key": "fda96c5707a06e77e09eb11b3fcfe345462a42820513b304148e7894f6f94515",
+        "job_incarnation": 1793437572427,
+        "apply_url": "https://jobs.connectingcolorado.gov/careerhub/explore/jobs/844768669478596?domain=coloradowfx.gov",
+        "enriched_company_data": {
+          "latest_funding_investors": null,
+          "homepage_uri": null,
+          "parent_company": null,
+          "latest_funding_year": null,
+          "latest_funding_type": null,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "nb_employees": null,
+          "year_founded": null,
+          "external_id": null,
+          "org_classification": "direct_employer",
+          "board_classification": "direct_employer",
+          "org_entity_id": null,
+          "hq_country": null,
+          "enriched_at": "2026-10-06T23:57:40.890Z",
+          "activities": null,
+          "industries": null,
+          "latest_funding_amount": null,
+          "name": null,
+          "tagline": null,
+          "organization_type": null,
+          "subsidiaries": null,
+          "status": "VALID_COMPANY"
+        },
+        "requisition_id": "ckqic2mt2d6k1u08",
+        "is_expired": false,
+        "_geoloc": [
+          {
+            "lon": -104.9903,
+            "lat": 39.7392
+          }
+        ],
+        "attributed_org": {
+          "org_entity_id": null,
+          "website": null,
+          "method": "eightfold_careerhub_source_employer",
+          "name": "Invenergy LLC",
+          "external_id": null
+        },
+        "board_token": "jobs.connectingcolorado.gov",
+        "id": "eightfold___jobs.connectingcolorado.gov___844768669478596",
+        "objectID": "eightfold___jobs.connectingcolorado.gov___844768669478596"
+      },
+      {
+        "attributed_org_card": null,
+        "v5_processed_job_data": {
+          "security_clearance": "None",
+          "masters_degree_requirement": "Not Mentioned",
+          "bi-weekly_min_compensation": 1688,
+          "oral_communication_level": "Medium",
+          "workplace_physical_environment": "Office",
+          "hourly_max_compensation": 40.89807692307692,
+          "overnight_work": "Not Indicated",
+          "is_driver_license_required": false,
+          "boundless_workplace_states": [
+            "New Mexico, US"
+          ],
+          "number_of_workplace_states": 1,
+          "retirement_plan": true,
+          "workplace_continents": [
+            "North America"
+          ],
+          "is_workplace_worldwide_ok": false,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "monthly_min_compensation": 3657.3333333333335,
+          "military_veterans": false,
+          "is_compensation_transparent": true,
+          "land_travel_requirement": "None",
+          "is_high_school_required": true,
+          "number_of_workplace_continents": 1,
+          "company_name": "CVS Health",
+          "workplace_cities": [],
+          "401k_matching": false,
+          "cognitive_demand": "High",
+          "estimated_publish_date_millis": 1793388164289,
+          "fair_chance": true,
+          "associates_degree_requirement": "Not Mentioned",
+          "number_of_workplace_counties": 0,
+          "core_job_title": "Quantitative Enterprise Risk Management Analyst",
+          "weekend_availability_required": false,
+          "monthly_max_compensation": 7089,
+          "doctorate_degree_requirement": "Not Mentioned",
+          "company_website": null,
+          "licenses_or_certifications": [],
+          "number_of_workplace_countries": 1,
+          "evening_shift_work": "Not Indicated",
+          "visa_sponsorship": false,
+          "daily_max_compensation": 327.18461538461537,
+          "workplace_countries": [
+            "US"
+          ],
+          "role_activities": [
+            "developing risk models",
+            "analyzing datasets",
+            "supporting regulatory processes"
+          ],
+          "holiday_availability_required": false,
+          "role_type": "Individual Contributor",
+          "physical_position": "Sitting",
+          "listed_compensation_currency": "USD",
+          "four_day_work_week": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "bachelors_degree_requirement": "Required",
+          "weekly_max_compensation": 1635.923076923077,
+          "weekly_min_compensation": 844,
+          "boundless_workplace_continents": [],
+          "generous_parental_leave": false,
+          "job_category": "Data and Analytics",
+          "workplace_type": "Remote",
+          "computer_usage": "High",
+          "relocation_assistance": false,
+          "generous_paid_time_off": true,
+          "boundless_workplace_countries": [],
+          "air_travel_requirement": "None",
+          "company_tagline": null,
+          "workplace_counties": [],
+          "language_requirements": [
+            "English"
+          ],
+          "hourly_min_compensation": 21.1,
+          "daily_min_compensation": 168.8,
+          "company_activities": null,
+          "bi-weekly_max_compensation": 3271.846153846154,
+          "num_language_requirements": 1,
+          "company_sector_and_industry": null,
+          "commitment": [
+            "Full Time"
+          ],
+          "doctorate_degree_fields_of_study": [],
+          "requirements_summary": "Bachelor's degree or equivalent in quantitative, analytical, finance, business, or related field; foundational quantitative analysis experience; proficiency in Microsoft Excel, SQL, and VBA; attention to detail and documentation skills.",
+          "tuition_reimbursement": false,
+          "masters_degree_fields_of_study": [],
+          "overtime_required": false,
+          "formatted_workplace_location": "New Mexico, United States",
+          "number_of_workplace_cities": 0,
+          "technical_tools": [
+            "Microsoft Excel",
+            "SQL",
+            "VBA",
+            "PowerQuery",
+            "R",
+            "Python"
+          ],
+          "workplace_states": [
+            "New Mexico, US"
+          ],
+          "licenses_or_certifications_not_mentioned": true,
+          "seniority_level": "Entry Level",
+          "min_industry_and_role_yoe": null,
+          "physical_labor_intensity": "Low",
+          "listed_compensation_frequency": "Yearly",
+          "on_call_requirement": "None",
+          "min_management_and_leadership_yoe": null,
+          "bachelors_degree_fields_of_study": [
+            "quantitative",
+            "analytical",
+            "finance",
+            "business"
+          ],
+          "yearly_max_compensation": 85068,
+          "position_employer_type": "Internal Position",
+          "morning_shift_work": "Not Indicated",
+          "estimated_publish_date": "2026-10-30T19:22:44.289Z",
+          "yearly_min_compensation": 43888,
+          "associates_degree_fields_of_study": []
+        },
+        "hc_indexed_at": "2026-10-31T19:00:31.100714262Z",
+        "source_and_board_token": "eightfold_jobs.connectingcolorado.gov",
+        "job_information": {
+          "savedFromUsers": [],
+          "num_views": 17,
+          "job_title_raw": "Quantitative Enterprise Risk Management Analyst",
+          "viewedByUsers": [],
+          "num_applies": 2,
+          "num_saves": 4,
+          "title": "Quantitative Enterprise Risk Management Analyst",
+          "appliedFromUsers": [],
+          "hiddenFromUsers": []
+        },
+        "original_source_id": "5519823391297348",
+        "strict_dedup_cluster_id": "eightfold___jobs.connectingcolorado.gov___5519823391297348",
+        "liberal_dedup_cluster": "workday___cvshealth-wd1-cvs_health_careers___quantitative-enterprise-risk-management-analyst_r1070006",
+        "source": "eightfold",
+        "collapse_key": "fda96c5707a06e77e09eb11b3fcfe345462a42820513b304148e7894f6f94515",
+        "job_incarnation": 1793388188125,
+        "apply_url": "https://jobs.connectingcolorado.gov/careerhub/explore/jobs/5519823391297348?domain=coloradowfx.gov",
+        "enriched_company_data": {
+          "latest_funding_investors": null,
+          "homepage_uri": null,
+          "parent_company": null,
+          "latest_funding_year": null,
+          "latest_funding_type": null,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "nb_employees": null,
+          "year_founded": null,
+          "external_id": null,
+          "org_classification": "direct_employer",
+          "board_classification": "direct_employer",
+          "org_entity_id": null,
+          "hq_country": null,
+          "enriched_at": "2026-10-06T23:57:40.890Z",
+          "activities": null,
+          "industries": null,
+          "latest_funding_amount": null,
+          "name": null,
+          "tagline": null,
+          "organization_type": null,
+          "subsidiaries": null,
+          "status": "VALID_COMPANY"
+        },
+        "requisition_id": "81ou6gu9m97uzbd1",
+        "is_expired": false,
+        "_geoloc": [],
+        "attributed_org": {
+          "org_entity_id": null,
+          "website": null,
+          "method": "eightfold_careerhub_source_employer",
+          "name": "CVS Health",
+          "external_id": null
+        },
+        "board_token": "jobs.connectingcolorado.gov",
+        "id": "eightfold___jobs.connectingcolorado.gov___5519823391297348",
+        "objectID": "eightfold___jobs.connectingcolorado.gov___5519823391297348"
+      },
+      {
+        "id": "eightfold___jobs.connectingcolorado.gov___844768669381402",
+        "job_incarnation": 1793287619918,
+        "board_token": "jobs.connectingcolorado.gov",
+        "source": "eightfold",
+        "apply_url": "https://jobs.connectingcolorado.gov/careerhub/explore/jobs/844768669381402?domain=coloradowfx.gov",
+        "source_and_board_token": "eightfold_jobs.connectingcolorado.gov",
+        "job_information": {
+          "title": "Tax Technology Associate (Fall 2027/Winter 2028)",
+          "job_title_raw": "Tax Technology Associate (Fall 2027/Winter 2028)",
+          "viewedByUsers": [],
+          "num_views": 1
+        },
+        "v5_processed_job_data": {
+          "core_job_title": "Tax Technology Associate",
+          "requirements_summary": "Bachelor's degree in computer science, business administration, MIS, or accounting/finance; travel to client locations required; reliable transportation; 3.0 GPA preferred; strong communication and computer skills.",
+          "technical_tools": [
+            "Microsoft Excel",
+            "SharePoint"
+          ],
+          "licenses_or_certifications": [],
+          "associates_degree_requirement": "Not Mentioned",
+          "associates_degree_fields_of_study": [],
+          "bachelors_degree_requirement": "Required",
+          "bachelors_degree_fields_of_study": [
+            "computer science",
+            "business administration",
+            "mis",
+            "accounting",
+            "finance"
+          ],
+          "masters_degree_requirement": "Not Mentioned",
+          "masters_degree_fields_of_study": [],
+          "doctorate_degree_requirement": "Not Mentioned",
+          "doctorate_degree_fields_of_study": [],
+          "licenses_or_certifications_not_mentioned": true,
+          "min_industry_and_role_yoe": null,
+          "401k_matching": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "min_management_and_leadership_yoe": null,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "job_category": "Information Technology",
+          "role_activities": [
+            "creating documentation",
+            "configuring SharePoint",
+            "supporting tax practitioners"
+          ],
+          "commitment": [
+            "Full Time"
+          ],
+          "role_type": "Individual Contributor",
+          "seniority_level": "Entry Level",
+          "workplace_countries": [
+            "US"
+          ],
+          "boundless_workplace_states": [],
+          "boundless_workplace_countries": [],
+          "boundless_workplace_continents": [],
+          "workplace_continents": [
+            "North America"
+          ],
+          "workplace_states": [
+            "Colorado, US"
+          ],
+          "workplace_cities": [
+            "Denver, Colorado, US"
+          ],
+          "workplace_counties": [
+            "Denver County, Colorado, US"
+          ],
+          "workplace_type": "Hybrid",
+          "workplace_physical_environment": "Office",
+          "oral_communication_level": "High",
+          "physical_labor_intensity": "Low",
+          "physical_position": "Sitting",
+          "computer_usage": "High",
+          "cognitive_demand": "High",
+          "air_travel_requirement": "None",
+          "land_travel_requirement": "Minimal",
+          "morning_shift_work": "Not Indicated",
+          "evening_shift_work": "Not Indicated",
+          "overnight_work": "Not Indicated",
+          "formatted_workplace_location": "Denver, Colorado, United States",
+          "on_call_requirement": "None",
+          "weekend_availability_required": false,
+          "holiday_availability_required": false,
+          "generous_paid_time_off": false,
+          "four_day_work_week": false,
+          "overtime_required": false,
+          "is_workplace_worldwide_ok": false,
+          "language_requirements": [
+            "English"
+          ],
+          "num_language_requirements": 1,
+          "number_of_workplace_cities": 1,
+          "number_of_workplace_counties": 1,
+          "number_of_workplace_states": 1,
+          "number_of_workplace_countries": 1,
+          "number_of_workplace_continents": 1,
+          "yearly_max_compensation": 84000,
+          "yearly_min_compensation": 70400,
+          "monthly_max_compensation": 7000,
+          "monthly_min_compensation": 5866.666666666667,
+          "weekly_max_compensation": 1615.3846153846155,
+          "weekly_min_compensation": 1353.8461538461538,
+          "hourly_max_compensation": 40.38461538461539,
+          "hourly_min_compensation": 33.84615384615385,
+          "bi-weekly_min_compensation": 2707.6923076923076,
+          "bi-weekly_max_compensation": 3230.769230769231,
+          "daily_min_compensation": 270.7692307692308,
+          "daily_max_compensation": 323.0769230769231,
+          "estimated_publish_date": "2026-10-29T15:26:10.340Z",
+          "estimated_publish_date_millis": 1793287570340,
+          "fair_chance": true,
+          "visa_sponsorship": false,
+          "relocation_assistance": false,
+          "military_veterans": false,
+          "tuition_reimbursement": false,
+          "retirement_plan": false,
+          "generous_parental_leave": false,
+          "is_high_school_required": true,
+          "is_driver_license_required": false,
+          "is_compensation_transparent": true,
+          "listed_compensation_currency": "USD",
+          "listed_compensation_frequency": "Yearly",
+          "security_clearance": "None",
+          "position_employer_type": "Internal Position",
+          "company_name": "RSM US LLP",
+          "company_website": null,
+          "company_sector_and_industry": null,
+          "company_activities": null,
+          "company_tagline": null
+        },
+        "enriched_company_data": {
+          "enriched_at": "2026-10-06T23:57:40.890Z",
+          "status": "VALID_COMPANY",
+          "name": null,
+          "homepage_uri": null,
+          "hq_country": null,
+          "parent_company": null,
+          "subsidiaries": null,
+          "industries": null,
+          "activities": null,
+          "nb_employees": null,
+          "year_founded": null,
+          "tagline": null,
+          "organization_type": null,
+          "latest_funding_investors": null,
+          "latest_funding_type": null,
+          "latest_funding_year": null,
+          "latest_funding_amount": null,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "org_entity_id": null,
+          "external_id": null,
+          "board_classification": "direct_employer",
+          "org_classification": "direct_employer"
+        },
+        "_geoloc": [
+          {
+            "lat": 39.7392,
+            "lon": -104.9903
+          }
+        ],
+        "original_source_id": "844768669381402",
+        "requisition_id": "2420f87job5grno3",
+        "collapse_key": "fda96c5707a06e77e09eb11b3fcfe345462a42820513b304148e7894f6f94515",
+        "is_expired": false,
+        "attributed_org": {
+          "name": "RSM US LLP",
+          "org_entity_id": null,
+          "external_id": null,
+          "website": null,
+          "method": "eightfold_careerhub_source_employer"
+        },
+        "attributed_org_card": null,
+        "strict_dedup_cluster_id": "cl_c1ovguh3fhck4let",
+        "liberal_dedup_cluster": "workday___rsm-wd1-rsmcareers___tax-technology-associate--fall-2027-winter-2028-_jr122002-1",
+        "objectID": "eightfold___jobs.connectingcolorado.gov___844768669381402"
+      },
+      {
+        "id": "eightfold___jobs.connectingcolorado.gov___844768669380595",
+        "job_incarnation": 1793219739118,
+        "board_token": "jobs.connectingcolorado.gov",
+        "source": "eightfold",
+        "apply_url": "https://jobs.connectingcolorado.gov/careerhub/explore/jobs/844768669380595?domain=coloradowfx.gov",
+        "source_and_board_token": "eightfold_jobs.connectingcolorado.gov",
+        "job_information": {
+          "title": "Senior Software Developer",
+          "job_title_raw": "Senior Software Developer",
+          "viewedByUsers": [],
+          "num_views": 68,
+          "hiddenFromUsers": [],
+          "appliedFromUsers": [],
+          "num_applies": 21,
+          "savedFromUsers": [],
+          "num_saves": 1
+        },
+        "v5_processed_job_data": {
+          "core_job_title": "Software Developer",
+          "requirements_summary": "Bachelor's in Computer Engineering, Mechanical Engineering, or related; 1 year as Software Engineer or related; experience with distributed systems, ad tech, data pipelines, and cloud platforms; proficiency in JavaScript, Golang, or Python.",
+          "technical_tools": [
+            "JavaScript",
+            "Golang",
+            "Python",
+            "Apache Spark",
+            "Kafka",
+            "MySQL",
+            "AWS",
+            "Docker",
+            "Kubernetes"
+          ],
+          "licenses_or_certifications": [],
+          "associates_degree_requirement": "Not Mentioned",
+          "associates_degree_fields_of_study": [],
+          "bachelors_degree_requirement": "Required",
+          "bachelors_degree_fields_of_study": [
+            "computer engineering",
+            "mechanical engineering"
+          ],
+          "masters_degree_requirement": "Not Mentioned",
+          "masters_degree_fields_of_study": [],
+          "doctorate_degree_requirement": "Not Mentioned",
+          "doctorate_degree_fields_of_study": [],
+          "licenses_or_certifications_not_mentioned": true,
+          "min_industry_and_role_yoe": 1,
+          "401k_matching": false,
+          "is_min_industry_and_role_yoe_not_mentioned": false,
+          "min_management_and_leadership_yoe": null,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "job_category": "Software Development",
+          "role_activities": [
+            "designing distributed systems",
+            "developing data pipelines",
+            "mentoring junior engineers"
+          ],
+          "commitment": [
+            "Full Time"
+          ],
+          "role_type": "Individual Contributor",
+          "seniority_level": "Entry Level",
+          "workplace_countries": [
+            "US"
+          ],
+          "boundless_workplace_states": [],
+          "boundless_workplace_countries": [],
+          "boundless_workplace_continents": [],
+          "workplace_continents": [
+            "North America"
+          ],
+          "workplace_states": [
+            "Colorado, US"
+          ],
+          "workplace_cities": [
+            "Denver, Colorado, US"
+          ],
+          "workplace_counties": [
+            "Denver County, Colorado, US"
+          ],
+          "workplace_type": "Onsite",
+          "workplace_physical_environment": "Office",
+          "oral_communication_level": "Medium",
+          "physical_labor_intensity": "Low",
+          "physical_position": "Sitting",
+          "computer_usage": "High",
+          "cognitive_demand": "High",
+          "air_travel_requirement": "None",
+          "land_travel_requirement": "None",
+          "morning_shift_work": "Not Indicated",
+          "evening_shift_work": "Not Indicated",
+          "overnight_work": "Not Indicated",
+          "formatted_workplace_location": "Denver, Colorado, United States",
+          "on_call_requirement": "None",
+          "weekend_availability_required": false,
+          "holiday_availability_required": false,
+          "generous_paid_time_off": false,
+          "four_day_work_week": false,
+          "overtime_required": false,
+          "is_workplace_worldwide_ok": false,
+          "language_requirements": [
+            "English"
+          ],
+          "num_language_requirements": 1,
+          "number_of_workplace_cities": 1,
+          "number_of_workplace_counties": 1,
+          "number_of_workplace_states": 1,
+          "number_of_workplace_countries": 1,
+          "number_of_workplace_continents": 1,
+          "yearly_max_compensation": 215000,
+          "yearly_min_compensation": 205000,
+          "monthly_max_compensation": 17916.666666666668,
+          "monthly_min_compensation": 17083.333333333332,
+          "weekly_max_compensation": 4134.615384615385,
+          "weekly_min_compensation": 3942.3076923076924,
+          "hourly_max_compensation": 103.36538461538461,
+          "hourly_min_compensation": 98.5576923076923,
+          "bi-weekly_min_compensation": 7884.615384615385,
+          "bi-weekly_max_compensation": 8269.23076923077,
+          "daily_min_compensation": 788.4615384615385,
+          "daily_max_compensation": 826.9230769230769,
+          "estimated_publish_date": "2026-10-28T20:34:55.788Z",
+          "estimated_publish_date_millis": 1793219695788,
+          "fair_chance": false,
+          "visa_sponsorship": false,
+          "relocation_assistance": false,
+          "military_veterans": false,
+          "tuition_reimbursement": false,
+          "retirement_plan": false,
+          "generous_parental_leave": false,
+          "is_high_school_required": true,
+          "is_driver_license_required": false,
+          "is_compensation_transparent": true,
+          "listed_compensation_currency": "USD",
+          "listed_compensation_frequency": "Yearly",
+          "security_clearance": "None",
+          "position_employer_type": "Internal Position",
+          "company_name": "Alphonso Inc",
+          "company_website": null,
+          "company_sector_and_industry": null,
+          "company_activities": null,
+          "company_tagline": null
+        },
+        "enriched_company_data": {
+          "enriched_at": "2026-10-06T23:57:40.890Z",
+          "status": "VALID_COMPANY",
+          "name": null,
+          "homepage_uri": null,
+          "hq_country": null,
+          "parent_company": null,
+          "subsidiaries": null,
+          "industries": null,
+          "activities": null,
+          "nb_employees": null,
+          "year_founded": null,
+          "tagline": null,
+          "organization_type": null,
+          "latest_funding_investors": null,
+          "latest_funding_type": null,
+          "latest_funding_year": null,
+          "latest_funding_amount": null,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "org_entity_id": null,
+          "external_id": null,
+          "board_classification": "direct_employer",
+          "org_classification": "direct_employer"
+        },
+        "_geoloc": [
+          {
+            "lat": 39.7392,
+            "lon": -104.9903
+          }
+        ],
+        "original_source_id": "844768669380595",
+        "requisition_id": "eebgf4tqoxajw3to",
+        "collapse_key": "fda96c5707a06e77e09eb11b3fcfe345462a42820513b304148e7894f6f94515",
+        "is_expired": false,
+        "attributed_org": {
+          "name": "Alphonso Inc",
+          "org_entity_id": null,
+          "external_id": null,
+          "website": null,
+          "method": "eightfold_careerhub_source_employer"
+        },
+        "attributed_org_card": null,
+        "strict_dedup_cluster_id": "eightfold___jobs.connectingcolorado.gov___844768669380595",
+        "liberal_dedup_cluster": "eightfold___jobs.connectingcolorado.gov___844768669380595",
+        "objectID": "eightfold___jobs.connectingcolorado.gov___844768669380595"
+      },
+      {
+        "attributed_org_card": {
+          "activities_search_text": [
+            "cloud",
+            "cloud computing",
+            "cloud computing services",
+            "computing",
+            "computing services",
+            "e",
+            "e commerce",
+            "e commerce retail",
+            "commerce",
+            "commerce retail",
+            "retail"
+          ],
+          "aliases": [
+            "Amazon Web Services",
+            "AWS",
+            "Amazon.com Inc.",
+            "Amazon.com",
+            "Amazon.com, Inc."
+          ],
+          "parent_company": null,
+          "nb_employees": 1576000,
+          "year_founded": 1994,
+          "hq_country": "US",
+          "activities": [
+            "Cloud computing services",
+            "E-commerce retail",
+            "Digital entertainment streaming",
+            "Logistics and delivery",
+            "Consumer electronics design"
+          ],
+          "industries": [
+            "E-Commerce & Online Retail",
+            "Data Centers & Cloud Infrastructure",
+            "Logistics & Supply Chain Services",
+            "Electronics Manufacturing",
+            "Holding Companies & Conglomerates"
+          ],
+          "organization_type": "Public",
+          "latest_fundraising": {
+            "total_amount_raised": null,
+            "lead_investors": [],
+            "funding_type": "IPO",
+            "year_raised": 1997
+          },
+          "stock_info": {
+            "stock_exchange": "NASDAQ",
+            "stock_symbol": "AMZN"
+          },
+          "tagline": "Multinational technology company focused on e-commerce and cloud computing.",
+          "subsidiaries": [
+            "Whole Foods Market",
+            "Twitch Interactive",
+            "IMDb",
+            "Zappos",
+            "Ring",
+            "Blink",
+            "Zoox",
+            "One Medical",
+            "Amazon MGM Studios",
+            "Audible",
+            "Goodreads",
+            "AbeBooks",
+            "PillPack",
+            "Woot",
+            "eero",
+            "Kuiper Systems",
+            "Shopbop"
+          ],
+          "card_source": "attributed_org"
+        },
+        "v5_processed_job_data": {
+          "security_clearance": "None",
+          "masters_degree_requirement": "Not Mentioned",
+          "bi-weekly_min_compensation": 2472.8,
+          "oral_communication_level": "Medium",
+          "workplace_physical_environment": "Industrial",
+          "hourly_max_compensation": 54.18,
+          "overnight_work": "Required",
+          "is_driver_license_required": false,
+          "boundless_workplace_states": [],
+          "number_of_workplace_states": 1,
+          "retirement_plan": true,
+          "workplace_continents": [
+            "North America"
+          ],
+          "is_workplace_worldwide_ok": false,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "monthly_min_compensation": 5357.733333333334,
+          "military_veterans": false,
+          "is_compensation_transparent": true,
+          "land_travel_requirement": "Moderate",
+          "is_high_school_required": true,
+          "number_of_workplace_continents": 1,
+          "company_name": "Amazon Data Services, Inc.",
+          "workplace_cities": [],
+          "401k_matching": true,
+          "cognitive_demand": "High",
+          "estimated_publish_date_millis": 1793409977161,
+          "fair_chance": false,
+          "associates_degree_requirement": "Not Mentioned",
+          "number_of_workplace_counties": 1,
+          "core_job_title": "Data Center Technician",
+          "weekend_availability_required": true,
+          "monthly_max_compensation": 9391.199999999999,
+          "doctorate_degree_requirement": "Not Mentioned",
+          "company_website": "amazon.com",
+          "licenses_or_certifications": [],
+          "number_of_workplace_countries": 1,
+          "evening_shift_work": "Required",
+          "visa_sponsorship": false,
+          "daily_max_compensation": 433.44,
+          "workplace_countries": [
+            "US"
+          ],
+          "role_activities": [
+            "performing hardware repairs",
+            "troubleshooting network issues",
+            "supporting data center operations"
+          ],
+          "holiday_availability_required": true,
+          "role_type": "Individual Contributor",
+          "physical_position": "Standing",
+          "listed_compensation_currency": "USD",
+          "four_day_work_week": false,
+          "is_min_industry_and_role_yoe_not_mentioned": false,
+          "bachelors_degree_requirement": "Required",
+          "weekly_max_compensation": 2167.2,
+          "weekly_min_compensation": 1236.4,
+          "boundless_workplace_continents": [],
+          "generous_parental_leave": true,
+          "job_category": "Information Technology",
+          "workplace_type": "Onsite",
+          "computer_usage": "High",
+          "relocation_assistance": true,
+          "generous_paid_time_off": true,
+          "boundless_workplace_countries": [],
+          "air_travel_requirement": "None",
+          "company_tagline": "A provider of cloud infrastructure and data center services supporting global operations.",
+          "workplace_counties": [
+            "Pecos County, Texas, US"
+          ],
+          "language_requirements": [
+            "English"
+          ],
+          "hourly_min_compensation": 30.91,
+          "daily_min_compensation": 247.28,
+          "company_activities": [
+            "cloud infrastructure",
+            "data center operations"
+          ],
+          "bi-weekly_max_compensation": 4334.4,
+          "num_language_requirements": 1,
+          "company_sector_and_industry": "Information Technology",
+          "commitment": [
+            "Full Time"
+          ],
+          "doctorate_degree_fields_of_study": [],
+          "requirements_summary": "1+ years computer networking and Linux experience; 18+ months hardware/network troubleshooting; bachelor's degree in IT or related field; ability to lift 40 lbs; flexible schedule including nights, weekends, holidays; travel to data centers as needed.",
+          "tuition_reimbursement": false,
+          "masters_degree_fields_of_study": [],
+          "overtime_required": true,
+          "formatted_workplace_location": "Pecos County, Texas, United States",
+          "number_of_workplace_cities": 0,
+          "technical_tools": [
+            "Linux"
+          ],
+          "workplace_states": [
+            "Texas, US"
+          ],
+          "licenses_or_certifications_not_mentioned": true,
+          "seniority_level": "Entry Level",
+          "min_industry_and_role_yoe": 1,
+          "physical_labor_intensity": "High",
+          "listed_compensation_frequency": "Hourly",
+          "on_call_requirement": "Regular (once a week or more)",
+          "min_management_and_leadership_yoe": null,
+          "bachelors_degree_fields_of_study": [
+            "information technology",
+            "computer science"
+          ],
+          "yearly_max_compensation": 112694.4,
+          "position_employer_type": "Internal Position",
+          "morning_shift_work": "Required",
+          "estimated_publish_date": "2026-10-31T01:26:17.161Z",
+          "yearly_min_compensation": 64292.8,
+          "associates_degree_fields_of_study": []
+        },
+        "hc_indexed_at": "2026-10-31T13:27:21.628601272Z",
+        "source_and_board_token": "adhoc_amazon",
+        "job_information": {
+          "num_views": 2,
+          "job_title_raw": "Data Center Technician",
+          "viewedByUsers": [],
+          "title": "Data Center Technician"
+        },
+        "original_source_id": "10593926",
+        "strict_dedup_cluster_id": "adhoc___amazon___10593926",
+        "liberal_dedup_cluster": "adhoc___amazon___10506948",
+        "source": "adhoc",
+        "collapse_key": "384b906d0e056dc1befbff3e8ec8aa6f6a9c79e6a8bb94f74dd9783443510b1f",
+        "job_incarnation": 1793409977563,
+        "apply_url": "https://www.amazon.jobs/en/jobs/10593926/data-center-technician",
+        "enriched_company_data": {
+          "latest_funding_investors": [],
+          "homepage_uri": "amazon.com",
+          "parent_company": null,
+          "latest_funding_year": 1997,
+          "latest_funding_type": "IPO",
+          "stock_exchange": "NASDAQ",
+          "stock_symbol": "AMZN",
+          "nb_employees": 1576000,
+          "year_founded": 1994,
+          "external_id": "-hMOYcl",
+          "org_classification": "direct_employer",
+          "board_classification": "direct_employer",
+          "org_entity_id": "org_650b26524ec9bf3933854d20b4a3363181b046b3",
+          "hq_country": "US",
+          "enriched_at": "2026-08-15T04:42:59.373Z",
+          "activities": [
+            "Cloud computing services",
+            "E-commerce retail",
+            "Digital entertainment streaming",
+            "Logistics and delivery",
+            "Consumer electronics design"
+          ],
+          "industries": [
+            "E-Commerce & Online Retail",
+            "Data Centers & Cloud Infrastructure",
+            "Logistics & Supply Chain Services",
+            "Electronics Manufacturing",
+            "Holding Companies & Conglomerates"
+          ],
+          "latest_funding_amount": null,
+          "name": "Amazon",
+          "tagline": "Multinational technology company focused on e-commerce and cloud computing.",
+          "organization_type": "Public",
+          "subsidiaries": [
+            "Whole Foods Market",
+            "Twitch Interactive",
+            "IMDb",
+            "Zappos",
+            "Ring",
+            "Blink",
+            "Zoox",
+            "One Medical",
+            "Amazon MGM Studios",
+            "Audible",
+            "Goodreads",
+            "AbeBooks",
+            "PillPack",
+            "Woot",
+            "eero",
+            "Kuiper Systems",
+            "Shopbop"
+          ],
+          "status": "VALID_COMPANY"
+        },
+        "requisition_id": "qkjygbwslnoa5zmh",
+        "is_expired": false,
+        "_geoloc": [
+          {
+            "lon": -102.72355,
+            "lat": 30.78102
+          }
+        ],
+        "attributed_org": {
+          "org_entity_id": "org_650b26524ec9bf3933854d20b4a3363181b046b3",
+          "website": "amazon.com",
+          "method": "llm_pick",
+          "name": "Amazon",
+          "external_id": "-hMOYcl"
+        },
+        "board_token": "amazon",
+        "id": "adhoc___amazon___10593926",
+        "objectID": "adhoc___amazon___10593926"
+      }
+    ],
+    "ssrPage": 0,
+    "ssrTotalCount": 6833,
+    "ssrCompanyCount": 2384,
+    "ssrPageSize": 40,
+    "ssrIsLastPage": false,
+    "ssrUnpackJobCards": false,
+    "ssrError": null,
+    "ssrCompanyTitle": null,
+    "initialSearchState": {
+      "restrictJobsToTransparentSalaries": true,
+      "departments": [
+        "Software Development",
+        "Information Technology",
+        "Data and Analytics"
+      ],
+      "maxCompensationLowEnd": "65000",
+      "seniorityLevel": [
+        "No Prior Experience Required",
+        "Entry Level"
+      ],
+      "securityClearances": [
+        "None"
+      ],
+      "locations": [
+        {
+          "formatted_address": "United States",
+          "types": [
+            "country"
+          ],
+          "geometry": {
+            "location": {
+              "lat": 0,
+              "lon": 0
+            }
+          },
+          "id": "user_country",
+          "address_components": [
+            {
+              "long_name": "United States",
+              "short_name": "US",
+              "types": [
+                "country"
+              ]
+            }
+          ],
+          "options": {
+            "flexible_regions": [
+              "anywhere_in_continent",
+              "anywhere_in_world"
+            ]
+          }
+        }
+      ]
+    },
+    "autoAppliedSearchSuggestion": null,
+    "ssrOpenJob": null,
+    "ssrTimings": {
+      "esLatencyMs": 1003
+    },
+    "ssrSignedIn": false
+  }
+}

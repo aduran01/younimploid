@@ -51,3 +51,15 @@ Check this log before re-deciding anything. Add new entries at the bottom. Unans
 - **Date:** 2026-10-31
 - **Decision:** Target Chrome only (latest stable). Develop with Node 22 and npm.
 - **Rationale:** The spec targets a Chrome extension, and Node 22 is already installed on the user's machine.
+
+## D-009: Build with @crxjs/vite-plugin
+
+- **Date:** 2026-10-31
+- **Decision:** Use `@crxjs/vite-plugin` 3.0.0 with Vite 8. This resolves D-006.
+- **Rationale:** It reads the manifest directly and handles content scripts and service workers without custom build code. Plain Vite needs more setup, and WXT is a whole framework.
+
+## D-010: TypeScript stays on 6.0.x for now
+
+- **Date:** 2026-10-31
+- **Decision:** Pin `typescript` 6.0.3 rather than the latest 7.x.
+- **Rationale:** `typescript-eslint` 8.72.1 requires TypeScript below 6.1.

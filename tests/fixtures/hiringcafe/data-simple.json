@@ -1,0 +1,1251 @@
+{
+  "__N_SSP": true,
+  "pageProps": {
+    "ssrHits": [
+      {
+        "id": "bamboohr___exceldriverservices___55",
+        "job_incarnation": 1793151314966,
+        "board_token": "exceldriverservices",
+        "source": "bamboohr",
+        "apply_url": "https://exceldriverservices.bamboohr.com/careers/55",
+        "source_and_board_token": "bamboohr_exceldriverservices",
+        "job_information": {
+          "title": "Unity Developer",
+          "job_title_raw": "Unity Developer",
+          "viewedByUsers": [],
+          "num_views": 13,
+          "appliedFromUsers": [],
+          "num_applies": 3,
+          "hiddenFromUsers": [],
+          "savedFromUsers": [],
+          "num_saves": 1
+        },
+        "v5_processed_job_data": {
+          "core_job_title": "Unity Developer",
+          "requirements_summary": "C# programming with OOP, Unity fundamentals, complete Unity project experience, REST APIs and JSON, version control (Git or Plastic SCM), strong debugging and communication skills.",
+          "technical_tools": [
+            "Unity",
+            "C#",
+            "REST APIs",
+            "JSON",
+            "Git",
+            "Plastic SCM",
+            ".NET",
+            "ASP.NET Core",
+            "Web API",
+            "Entity Framework",
+            "SQL",
+            "Netcode",
+            "Mirror",
+            "Photon",
+            "NUnit",
+            "Unity Test Framework",
+            "AWS",
+            "WebGL",
+            "CI/CD"
+          ],
+          "licenses_or_certifications": [],
+          "associates_degree_requirement": "Not Mentioned",
+          "associates_degree_fields_of_study": [],
+          "bachelors_degree_requirement": "Not Mentioned",
+          "bachelors_degree_fields_of_study": [],
+          "masters_degree_requirement": "Not Mentioned",
+          "masters_degree_fields_of_study": [],
+          "doctorate_degree_requirement": "Not Mentioned",
+          "doctorate_degree_fields_of_study": [],
+          "licenses_or_certifications_not_mentioned": true,
+          "min_industry_and_role_yoe": null,
+          "401k_matching": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "min_management_and_leadership_yoe": null,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "job_category": "Software Development",
+          "role_activities": [
+            "building backend systems",
+            "maintaining Unity applications",
+            "collaborating with team"
+          ],
+          "commitment": [
+            "Full Time"
+          ],
+          "role_type": "Individual Contributor",
+          "seniority_level": "Entry Level",
+          "workplace_countries": [
+            "US"
+          ],
+          "boundless_workplace_states": [],
+          "boundless_workplace_countries": [],
+          "boundless_workplace_continents": [],
+          "workplace_continents": [
+            "North America"
+          ],
+          "workplace_states": [
+            "Colorado, US"
+          ],
+          "workplace_cities": [
+            "Wheat Ridge, Colorado, US"
+          ],
+          "workplace_counties": [
+            "Jefferson County, Colorado, US"
+          ],
+          "workplace_type": "Onsite",
+          "workplace_physical_environment": "Office",
+          "oral_communication_level": "Medium",
+          "physical_labor_intensity": "Low",
+          "physical_position": "Sitting",
+          "computer_usage": "High",
+          "cognitive_demand": "High",
+          "air_travel_requirement": "None",
+          "land_travel_requirement": "None",
+          "morning_shift_work": "Not Indicated",
+          "evening_shift_work": "Not Indicated",
+          "overnight_work": "Not Indicated",
+          "formatted_workplace_location": "Wheat Ridge, Colorado, United States",
+          "on_call_requirement": "None",
+          "weekend_availability_required": false,
+          "holiday_availability_required": false,
+          "generous_paid_time_off": false,
+          "four_day_work_week": false,
+          "overtime_required": false,
+          "is_workplace_worldwide_ok": false,
+          "language_requirements": [
+            "English"
+          ],
+          "num_language_requirements": 1,
+          "number_of_workplace_cities": 1,
+          "number_of_workplace_counties": 1,
+          "number_of_workplace_states": 1,
+          "number_of_workplace_countries": 1,
+          "number_of_workplace_continents": 1,
+          "yearly_max_compensation": 75000,
+          "yearly_min_compensation": 65000,
+          "monthly_max_compensation": 6250,
+          "monthly_min_compensation": 5416.666666666667,
+          "weekly_max_compensation": 1442.3076923076924,
+          "weekly_min_compensation": 1250,
+          "hourly_max_compensation": 36.05769230769231,
+          "hourly_min_compensation": 31.25,
+          "bi-weekly_min_compensation": 2500,
+          "bi-weekly_max_compensation": 2884.6153846153848,
+          "daily_min_compensation": 250,
+          "daily_max_compensation": 288.46153846153845,
+          "estimated_publish_date": "2026-10-27T00:00:00.000Z",
+          "estimated_publish_date_millis": 1793059200000,
+          "fair_chance": false,
+          "visa_sponsorship": false,
+          "relocation_assistance": false,
+          "military_veterans": false,
+          "tuition_reimbursement": false,
+          "retirement_plan": false,
+          "generous_parental_leave": false,
+          "is_high_school_required": false,
+          "is_driver_license_required": false,
+          "is_compensation_transparent": true,
+          "listed_compensation_currency": "USD",
+          "listed_compensation_frequency": "Yearly",
+          "security_clearance": "None",
+          "position_employer_type": "Internal Position",
+          "company_name": "Excel Driver Services",
+          "company_website": "exceldriverservices.com",
+          "company_sector_and_industry": "Information Technology",
+          "company_activities": [
+            "simulation development",
+            "training technology"
+          ],
+          "company_tagline": "A company developing commercial vehicle training simulation platforms."
+        },
+        "enriched_company_data": {
+          "enriched_at": "2026-08-25T20:53:03.735Z",
+          "status": "VALID_COMPANY",
+          "name": "Excel Driver Services",
+          "homepage_uri": "exceldriverservices.com",
+          "hq_country": "US",
+          "parent_company": null,
+          "subsidiaries": [
+            "Drive Prodigy",
+            "Sim-Tech"
+          ],
+          "industries": [
+            "Career & Technical Training",
+            "Education Services & Tutoring"
+          ],
+          "activities": [
+            "commercial driver license training",
+            "professional driver testing",
+            "driver safety education",
+            "simulation technology training",
+            "hands-on driving instruction"
+          ],
+          "nb_employees": 31,
+          "year_founded": 2001,
+          "tagline": "Private CDL training company providing driver education, testing, simulation, and safety services to individuals and organizations.",
+          "organization_type": "Private",
+          "latest_funding_investors": [
+            "Lendistry SBLC"
+          ],
+          "latest_funding_type": "Debt Financing",
+          "latest_funding_year": 2024,
+          "latest_funding_amount": 487700,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "org_entity_id": "org_9fbfe5996bf09c135cf0aa5dd8c2a831d7a4f66e",
+          "external_id": "oYx4xEs",
+          "board_classification": "direct_employer",
+          "org_classification": "direct_employer"
+        },
+        "_geoloc": [
+          {
+            "lat": 39.7661,
+            "lon": -105.0772
+          }
+        ],
+        "requisition_id": "xjmnvy0n3r5zxd1g",
+        "collapse_key": "fe00b3b8be7d099e9cb0963b5629a7a877cbf2ace39b993131f32d7937e071dc",
+        "is_expired": false,
+        "attributed_org": {
+          "org_entity_id": "org_9fbfe5996bf09c135cf0aa5dd8c2a831d7a4f66e",
+          "external_id": "oYx4xEs",
+          "name": "Excel Driver Services",
+          "website": "exceldriverservices.com",
+          "method": "llm_pick"
+        },
+        "attributed_org_card": {
+          "card_source": "attributed_org",
+          "industries": [
+            "Career & Technical Training",
+            "Education Services & Tutoring"
+          ],
+          "activities": [
+            "commercial driver license training",
+            "professional driver testing",
+            "driver safety education",
+            "simulation technology training",
+            "hands-on driving instruction"
+          ],
+          "organization_type": "Private",
+          "nb_employees": 31,
+          "year_founded": 2001,
+          "latest_fundraising": {
+            "funding_type": "Debt Financing",
+            "lead_investors": [
+              "Lendistry SBLC"
+            ],
+            "total_amount_raised": 487700,
+            "year_raised": 2024
+          },
+          "stock_info": null,
+          "hq_country": "US",
+          "tagline": "Private CDL training company providing driver education, testing, simulation, and safety services to individuals and organizations.",
+          "aliases": [
+            "EXCEL DRIVER SERVICES LLC",
+            "Excel Driver Services, LLC"
+          ],
+          "activities_search_text": [
+            "commercial",
+            "commercial driver",
+            "commercial driver license",
+            "commercial driver license training",
+            "driver",
+            "driver license",
+            "driver license training",
+            "license",
+            "license training",
+            "training",
+            "professional",
+            "professional driver",
+            "professional driver testing",
+            "driver",
+            "driver testing",
+            "testing"
+          ],
+          "parent_company": null,
+          "subsidiaries": [
+            "Drive Prodigy",
+            "Sim-Tech"
+          ]
+        },
+        "strict_dedup_cluster_id": "bamboohr___exceldriverservices___55",
+        "liberal_dedup_cluster": "bamboohr___exceldriverservices___55",
+        "objectID": "bamboohr___exceldriverservices___55"
+      },
+      {
+        "v5_processed_job_data": {
+          "security_clearance": "None",
+          "masters_degree_requirement": "Not Mentioned",
+          "bi-weekly_min_compensation": null,
+          "oral_communication_level": "High",
+          "workplace_physical_environment": "Office",
+          "hourly_max_compensation": null,
+          "overnight_work": "Not Indicated",
+          "is_driver_license_required": false,
+          "boundless_workplace_states": [],
+          "number_of_workplace_states": 1,
+          "retirement_plan": false,
+          "workplace_continents": [
+            "North America"
+          ],
+          "is_workplace_worldwide_ok": false,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "monthly_min_compensation": null,
+          "military_veterans": false,
+          "is_compensation_transparent": false,
+          "land_travel_requirement": "None",
+          "is_high_school_required": true,
+          "number_of_workplace_continents": 1,
+          "company_name": "Prisms VR",
+          "workplace_cities": [
+            "San Francisco, California, US"
+          ],
+          "401k_matching": false,
+          "cognitive_demand": "High",
+          "estimated_publish_date_millis": 1784650142996,
+          "fair_chance": false,
+          "associates_degree_requirement": "Not Mentioned",
+          "number_of_workplace_counties": 1,
+          "core_job_title": "Unity Engineer",
+          "weekend_availability_required": false,
+          "monthly_max_compensation": null,
+          "doctorate_degree_requirement": "Not Mentioned",
+          "company_website": null,
+          "licenses_or_certifications": [],
+          "number_of_workplace_countries": 1,
+          "evening_shift_work": "Not Indicated",
+          "visa_sponsorship": false,
+          "daily_max_compensation": null,
+          "workplace_countries": [
+            "US"
+          ],
+          "role_activities": [
+            "building experiences",
+            "designing systems",
+            "optimizing performance"
+          ],
+          "holiday_availability_required": false,
+          "role_type": "Individual Contributor",
+          "physical_position": "Sitting",
+          "listed_compensation_currency": "USD",
+          "four_day_work_week": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "bachelors_degree_requirement": "Required",
+          "weekly_max_compensation": null,
+          "weekly_min_compensation": null,
+          "boundless_workplace_continents": [],
+          "generous_parental_leave": false,
+          "job_category": "Software Development",
+          "workplace_type": "Remote",
+          "computer_usage": "High",
+          "relocation_assistance": false,
+          "generous_paid_time_off": false,
+          "boundless_workplace_countries": [],
+          "air_travel_requirement": "None",
+          "company_tagline": "A team building immersive virtual reality learning experiences to improve K12 STEM education.",
+          "workplace_counties": [
+            "San Francisco County, California, US"
+          ],
+          "language_requirements": [
+            "English"
+          ],
+          "hourly_min_compensation": null,
+          "daily_min_compensation": null,
+          "company_activities": [
+            "vr education",
+            "stem education"
+          ],
+          "bi-weekly_max_compensation": null,
+          "num_language_requirements": 1,
+          "company_sector_and_industry": "Education",
+          "commitment": [
+            "Full Time"
+          ],
+          "doctorate_degree_fields_of_study": [],
+          "requirements_summary": "Bachelor's in Computer Science, professional Unity and C# experience, VR development and optimization, Git source control, strong communication and collaborative skills.",
+          "tuition_reimbursement": false,
+          "masters_degree_fields_of_study": [],
+          "overtime_required": false,
+          "formatted_workplace_location": "San Francisco, California, United States",
+          "number_of_workplace_cities": 1,
+          "technical_tools": [
+            "Unity",
+            "C#",
+            "Git"
+          ],
+          "workplace_states": [
+            "California, US"
+          ],
+          "licenses_or_certifications_not_mentioned": true,
+          "seniority_level": "Mid Level",
+          "min_industry_and_role_yoe": null,
+          "physical_labor_intensity": "Low",
+          "listed_compensation_frequency": "Yearly",
+          "on_call_requirement": "None",
+          "min_management_and_leadership_yoe": null,
+          "bachelors_degree_fields_of_study": [
+            "computer science"
+          ],
+          "yearly_max_compensation": null,
+          "position_employer_type": "Internal Position",
+          "morning_shift_work": "Not Indicated",
+          "estimated_publish_date": "2026-07-21T16:09:02.996Z",
+          "yearly_min_compensation": null,
+          "associates_degree_fields_of_study": []
+        },
+        "source_and_board_token": "breezy_prisms-vr",
+        "job_information": {
+          "savedFromUsers": [],
+          "num_views": 51,
+          "job_title_raw": "Unity Engineer",
+          "viewedByUsers": [],
+          "num_applies": 15,
+          "num_saves": 6,
+          "title": "Unity Engineer",
+          "appliedFromUsers": [],
+          "hiddenFromUsers": []
+        },
+        "source": "breezy",
+        "collapse_key": "3372a8946860e564a9d1aba023dfa8e8b58ee7157290170199faddd229d22d53",
+        "apply_url": "https://prisms-vr.breezy.hr/p/9ab2839f4fd9-unity-engineer",
+        "requisition_id": "0h9koe4qht1rh5nc",
+        "is_expired": false,
+        "enriched_company_data": {
+          "latest_funding_investors": [
+            "Andreessen Horowitz"
+          ],
+          "homepage_uri": "prismsvr.com",
+          "parent_company": null,
+          "latest_funding_year": 2023,
+          "latest_funding_type": "Series A",
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "nb_employees": 50,
+          "year_founded": 2019,
+          "hq_country": "US",
+          "enriched_at": "2026-08-03T22:59:00.495Z",
+          "activities": [
+            "Develop virtual reality software",
+            "Provide immersive learning platforms",
+            "Create STEM educational content",
+            "Design educational software solutions",
+            "Deliver spatial computing experiences"
+          ],
+          "industries": [
+            "EdTech",
+            "Virtual Reality"
+          ],
+          "latest_funding_amount": 12500000,
+          "name": "Prisms VR",
+          "tagline": "Immersive VR platform for K-12 STEM education.",
+          "organization_type": "Private",
+          "subsidiaries": null,
+          "status": "VALID_COMPANY"
+        },
+        "_geoloc": [
+          {
+            "lon": -122.4194,
+            "lat": 37.7749
+          }
+        ],
+        "board_token": "prisms-vr",
+        "id": "breezy___prisms-vr___9ab2839f4fd9",
+        "attributed_org_card": {
+          "activities_search_text": [
+            "virtual",
+            "virtual reality",
+            "virtual reality curriculum",
+            "virtual reality curriculum development",
+            "reality",
+            "reality curriculum",
+            "reality curriculum development",
+            "curriculum",
+            "curriculum development",
+            "development",
+            "experiential",
+            "experiential math",
+            "experiential math instruction",
+            "math",
+            "math instruction",
+            "instruction"
+          ],
+          "aliases": [
+            "Prisms of Reality",
+            "Prisms",
+            "Prisms of Reality, Inc."
+          ],
+          "parent_company": null,
+          "nb_employees": 83,
+          "year_founded": 2020,
+          "hq_country": "US",
+          "activities": [
+            "virtual reality curriculum development",
+            "experiential math instruction",
+            "science education software",
+            "K-12 classroom learning tools"
+          ],
+          "industries": [
+            "Education Services & Tutoring",
+            "Software & SaaS"
+          ],
+          "organization_type": "Private",
+          "latest_fundraising": {
+            "total_amount_raised": 12500000,
+            "lead_investors": [
+              "Andreessen Horowitz"
+            ],
+            "funding_type": "Series A",
+            "year_raised": 2023
+          },
+          "stock_info": null,
+          "tagline": "Prisms VR is a private virtual-reality STEM platform serving K–12 students with experiential math and science lessons.",
+          "subsidiaries": null,
+          "card_source": "attributed_org"
+        },
+        "attributed_org": {
+          "org_entity_id": "org_d9a53628294b751667755d1902db54eeaa72ccfb",
+          "website": "prismsvr.com",
+          "method": "single_deterministic",
+          "name": "Prisms VR",
+          "external_id": "q5trEvD"
+        },
+        "strict_dedup_cluster_id": "breezy___prisms-vr___9ab2839f4fd9",
+        "liberal_dedup_cluster": "breezy___prisms-vr___9ab2839f4fd9",
+        "objectID": "breezy___prisms-vr___9ab2839f4fd9"
+      },
+      {
+        "id": "adhoc___ihmc___99015",
+        "board_token": "ihmc",
+        "source": "adhoc",
+        "apply_url": "https://www.ihmc.us/unity-developer-2026/",
+        "source_and_board_token": "adhoc_ihmc",
+        "job_information": {
+          "title": "Unity Developer 2026",
+          "job_title_raw": "Unity Developer 2026",
+          "viewedByUsers": [],
+          "num_views": 13,
+          "appliedFromUsers": [],
+          "num_applies": 2,
+          "hiddenFromUsers": [],
+          "savedFromUsers": [],
+          "num_saves": 2
+        },
+        "v5_processed_job_data": {
+          "core_job_title": "Unity Developer",
+          "requirements_summary": "Experience in 3D Unity game development, proficiency in C# and scripting; recent graduates encouraged to apply.",
+          "technical_tools": [
+            "Unity",
+            "C#",
+            "Mirror"
+          ],
+          "licenses_or_certifications": [],
+          "associates_degree_requirement": "Not Mentioned",
+          "associates_degree_fields_of_study": [],
+          "bachelors_degree_requirement": "Not Mentioned",
+          "bachelors_degree_fields_of_study": [],
+          "masters_degree_requirement": "Not Mentioned",
+          "masters_degree_fields_of_study": [],
+          "doctorate_degree_requirement": "Not Mentioned",
+          "doctorate_degree_fields_of_study": [],
+          "licenses_or_certifications_not_mentioned": true,
+          "min_industry_and_role_yoe": null,
+          "401k_matching": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "min_management_and_leadership_yoe": null,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "job_category": "Software Development",
+          "role_activities": [
+            "developing VR applications",
+            "creating optimized assets",
+            "writing C# code"
+          ],
+          "commitment": [
+            "Full Time"
+          ],
+          "role_type": "Individual Contributor",
+          "seniority_level": "No Prior Experience Required",
+          "workplace_countries": [
+            "US"
+          ],
+          "boundless_workplace_states": [],
+          "boundless_workplace_countries": [],
+          "boundless_workplace_continents": [],
+          "workplace_continents": [
+            "North America"
+          ],
+          "workplace_states": [
+            "Florida, US"
+          ],
+          "workplace_cities": [
+            "Pensacola, Florida, US"
+          ],
+          "workplace_counties": [
+            "Escambia County, Florida, US"
+          ],
+          "workplace_type": "Onsite",
+          "workplace_physical_environment": "Office",
+          "oral_communication_level": "Medium",
+          "physical_labor_intensity": "Low",
+          "physical_position": "Sitting",
+          "computer_usage": "High",
+          "cognitive_demand": "High",
+          "air_travel_requirement": "None",
+          "land_travel_requirement": "None",
+          "morning_shift_work": "Not Indicated",
+          "evening_shift_work": "Not Indicated",
+          "overnight_work": "Not Indicated",
+          "formatted_workplace_location": "Pensacola, Florida, United States",
+          "on_call_requirement": "None",
+          "weekend_availability_required": false,
+          "holiday_availability_required": false,
+          "generous_paid_time_off": false,
+          "four_day_work_week": false,
+          "overtime_required": false,
+          "is_workplace_worldwide_ok": false,
+          "language_requirements": [
+            "English"
+          ],
+          "num_language_requirements": 1,
+          "number_of_workplace_cities": 1,
+          "number_of_workplace_counties": 1,
+          "number_of_workplace_states": 1,
+          "number_of_workplace_countries": 1,
+          "number_of_workplace_continents": 1,
+          "yearly_max_compensation": null,
+          "yearly_min_compensation": null,
+          "monthly_max_compensation": null,
+          "monthly_min_compensation": null,
+          "weekly_max_compensation": null,
+          "weekly_min_compensation": null,
+          "hourly_max_compensation": null,
+          "hourly_min_compensation": null,
+          "bi-weekly_min_compensation": null,
+          "bi-weekly_max_compensation": null,
+          "daily_min_compensation": null,
+          "daily_max_compensation": null,
+          "estimated_publish_date": "2026-10-01T14:01:00.000Z",
+          "estimated_publish_date_millis": 1790863260000,
+          "fair_chance": false,
+          "visa_sponsorship": false,
+          "relocation_assistance": false,
+          "military_veterans": false,
+          "tuition_reimbursement": false,
+          "retirement_plan": false,
+          "generous_parental_leave": false,
+          "is_high_school_required": false,
+          "is_driver_license_required": false,
+          "is_compensation_transparent": false,
+          "listed_compensation_currency": "USD",
+          "listed_compensation_frequency": "Yearly",
+          "security_clearance": "None",
+          "position_employer_type": "Internal Position",
+          "company_name": "Florida Institute for Human and Machine Cognition",
+          "company_website": "ihmc.us",
+          "company_sector_and_industry": "Research and Development",
+          "company_activities": [
+            "scientific research",
+            "virtual reality development"
+          ],
+          "company_tagline": "A research institute advancing human and machine cognition through innovative virtual reality projects."
+        },
+        "enriched_company_data": {
+          "enriched_at": "2026-09-20T04:26:41.864Z",
+          "status": "VALID_COMPANY",
+          "name": "Florida Institute for Human & Machine Cognition",
+          "homepage_uri": "ihmc.us",
+          "hq_country": "US",
+          "parent_company": "Florida Board of Governors",
+          "subsidiaries": null,
+          "industries": [
+            "Scientific Research & Development",
+            "IT Services & Consulting"
+          ],
+          "activities": [
+            "artificial intelligence research",
+            "robotics engineering",
+            "cognitive science research",
+            "human-centered computing research",
+            "exoskeleton development",
+            "human performance studies",
+            "defense-related research"
+          ],
+          "nb_employees": 201,
+          "year_founded": 1990,
+          "tagline": "A nonprofit research institute developing artificial intelligence, robotics, and human-performance technologies.",
+          "organization_type": "Non-Profit",
+          "latest_funding_investors": null,
+          "latest_funding_type": null,
+          "latest_funding_year": null,
+          "latest_funding_amount": null,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "org_entity_id": "org_0712e4cf1f62780003cdb9859f04dbae997c5395",
+          "external_id": "dIK7XCg",
+          "board_classification": "direct_employer",
+          "org_classification": "direct_employer"
+        },
+        "_geoloc": [
+          {
+            "lat": 30.4213,
+            "lon": -87.2169
+          }
+        ],
+        "original_source_id": "99015",
+        "requisition_id": "kzqc3b23zr257lon",
+        "collapse_key": "73bdb3521d119d80a8f91ddcbf352a7c8bbca23a16f7442077c124fca733bb08",
+        "is_expired": false,
+        "attributed_org": {
+          "org_entity_id": "org_0712e4cf1f62780003cdb9859f04dbae997c5395",
+          "external_id": "dIK7XCg",
+          "name": "Florida Institute for Human & Machine Cognition",
+          "website": "ihmc.us",
+          "method": "llm_pick"
+        },
+        "attributed_org_card": {
+          "card_source": "attributed_org",
+          "industries": [
+            "Scientific Research & Development",
+            "IT Services & Consulting"
+          ],
+          "activities": [
+            "artificial intelligence research",
+            "robotics engineering",
+            "cognitive science research",
+            "human-centered computing research",
+            "exoskeleton development",
+            "human performance studies",
+            "defense-related research"
+          ],
+          "organization_type": "Non-Profit",
+          "nb_employees": 201,
+          "year_founded": 1990,
+          "latest_fundraising": null,
+          "stock_info": null,
+          "hq_country": "US",
+          "tagline": "A nonprofit research institute developing artificial intelligence, robotics, and human-performance technologies.",
+          "aliases": [
+            "IHMC",
+            "Institute for Human & Machine Cognition",
+            "Florida Institute for Human and Machine Cognition, Inc."
+          ],
+          "activities_search_text": [
+            "artificial",
+            "artificial intelligence",
+            "artificial intelligence research",
+            "intelligence",
+            "intelligence research",
+            "research",
+            "robotics",
+            "robotics engineering",
+            "engineering"
+          ],
+          "parent_company": "Florida Board of Governors",
+          "subsidiaries": null
+        },
+        "strict_dedup_cluster_id": "adhoc___ihmc___99015",
+        "liberal_dedup_cluster": "adhoc___ihmc___99015",
+        "objectID": "adhoc___ihmc___99015"
+      },
+      {
+        "id": "adhoc___ihmc___99017",
+        "board_token": "ihmc",
+        "source": "adhoc",
+        "apply_url": "https://www.ihmc.us/post-doc-opportunity-in-scalable-human-machine-teaming/",
+        "source_and_board_token": "adhoc_ihmc",
+        "job_information": {
+          "title": "Post Doc Opportunity in Scalable Human-Machine Teaming",
+          "job_title_raw": "Post Doc Opportunity in Scalable Human-Machine Teaming",
+          "viewedByUsers": [],
+          "num_views": 1
+        },
+        "v5_processed_job_data": {
+          "core_job_title": "Postdoctoral Researcher",
+          "requirements_summary": "Strong programming and algorithm development skills; experience with physical systems; familiarity with human-machine interaction; working knowledge of HMT research; must be authorized to work in the US.",
+          "technical_tools": [
+            "ROS",
+            "Unity"
+          ],
+          "licenses_or_certifications": [],
+          "associates_degree_requirement": "Not Mentioned",
+          "associates_degree_fields_of_study": [],
+          "bachelors_degree_requirement": "Required",
+          "bachelors_degree_fields_of_study": [],
+          "masters_degree_requirement": "Preferred",
+          "masters_degree_fields_of_study": [
+            "relevant field"
+          ],
+          "doctorate_degree_requirement": "Not Mentioned",
+          "doctorate_degree_fields_of_study": [],
+          "licenses_or_certifications_not_mentioned": true,
+          "min_industry_and_role_yoe": null,
+          "401k_matching": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "min_management_and_leadership_yoe": null,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "job_category": "Research and Development (R&D)",
+          "role_activities": [
+            "conducting research",
+            "developing algorithms",
+            "designing experiments"
+          ],
+          "commitment": [
+            "Full Time"
+          ],
+          "role_type": "Individual Contributor",
+          "seniority_level": "Entry Level",
+          "workplace_countries": [
+            "US"
+          ],
+          "boundless_workplace_states": [],
+          "boundless_workplace_countries": [],
+          "boundless_workplace_continents": [],
+          "workplace_continents": [
+            "North America"
+          ],
+          "workplace_states": [
+            "Florida, US"
+          ],
+          "workplace_cities": [
+            "Pensacola, Florida, US"
+          ],
+          "workplace_counties": [
+            "Escambia County, Florida, US"
+          ],
+          "workplace_type": "Onsite",
+          "workplace_physical_environment": "Office",
+          "oral_communication_level": "High",
+          "physical_labor_intensity": "Low",
+          "physical_position": "Sitting",
+          "computer_usage": "High",
+          "cognitive_demand": "High",
+          "air_travel_requirement": "None",
+          "land_travel_requirement": "None",
+          "morning_shift_work": "Not Indicated",
+          "evening_shift_work": "Not Indicated",
+          "overnight_work": "Not Indicated",
+          "formatted_workplace_location": "Pensacola, Florida, United States",
+          "on_call_requirement": "None",
+          "weekend_availability_required": false,
+          "holiday_availability_required": false,
+          "generous_paid_time_off": false,
+          "four_day_work_week": false,
+          "overtime_required": false,
+          "is_workplace_worldwide_ok": false,
+          "language_requirements": [
+            "English"
+          ],
+          "num_language_requirements": 1,
+          "number_of_workplace_cities": 1,
+          "number_of_workplace_counties": 1,
+          "number_of_workplace_states": 1,
+          "number_of_workplace_countries": 1,
+          "number_of_workplace_continents": 1,
+          "yearly_max_compensation": null,
+          "yearly_min_compensation": null,
+          "monthly_max_compensation": null,
+          "monthly_min_compensation": null,
+          "weekly_max_compensation": null,
+          "weekly_min_compensation": null,
+          "hourly_max_compensation": null,
+          "hourly_min_compensation": null,
+          "bi-weekly_min_compensation": null,
+          "bi-weekly_max_compensation": null,
+          "daily_min_compensation": null,
+          "daily_max_compensation": null,
+          "estimated_publish_date": "2026-10-01T14:01:31.000Z",
+          "estimated_publish_date_millis": 1790863291000,
+          "fair_chance": false,
+          "visa_sponsorship": false,
+          "relocation_assistance": false,
+          "military_veterans": false,
+          "tuition_reimbursement": false,
+          "retirement_plan": false,
+          "generous_parental_leave": false,
+          "is_high_school_required": true,
+          "is_driver_license_required": false,
+          "is_compensation_transparent": false,
+          "listed_compensation_currency": "USD",
+          "listed_compensation_frequency": "Yearly",
+          "security_clearance": "None",
+          "position_employer_type": "Internal Position",
+          "company_name": "Florida Institute for Human and Machine Cognition",
+          "company_website": "ihmc.us",
+          "company_sector_and_industry": "Research and Development",
+          "company_activities": [
+            "human-machine teaming",
+            "robotics research"
+          ],
+          "company_tagline": "An internationally recognized research institute in robotics, AI, and human-centered systems."
+        },
+        "enriched_company_data": {
+          "enriched_at": "2026-09-20T04:26:41.864Z",
+          "status": "VALID_COMPANY",
+          "name": "Florida Institute for Human & Machine Cognition",
+          "homepage_uri": "ihmc.us",
+          "hq_country": "US",
+          "parent_company": "Florida Board of Governors",
+          "subsidiaries": null,
+          "industries": [
+            "Scientific Research & Development",
+            "IT Services & Consulting"
+          ],
+          "activities": [
+            "artificial intelligence research",
+            "robotics engineering",
+            "cognitive science research",
+            "human-centered computing research",
+            "exoskeleton development",
+            "human performance studies",
+            "defense-related research"
+          ],
+          "nb_employees": 201,
+          "year_founded": 1990,
+          "tagline": "A nonprofit research institute developing artificial intelligence, robotics, and human-performance technologies.",
+          "organization_type": "Non-Profit",
+          "latest_funding_investors": null,
+          "latest_funding_type": null,
+          "latest_funding_year": null,
+          "latest_funding_amount": null,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "org_entity_id": "org_0712e4cf1f62780003cdb9859f04dbae997c5395",
+          "external_id": "dIK7XCg",
+          "board_classification": "direct_employer",
+          "org_classification": "direct_employer"
+        },
+        "_geoloc": [
+          {
+            "lat": 30.4213,
+            "lon": -87.2169
+          }
+        ],
+        "original_source_id": "99017",
+        "requisition_id": "jz89vnn89nzwv6tf",
+        "collapse_key": "73bdb3521d119d80a8f91ddcbf352a7c8bbca23a16f7442077c124fca733bb08",
+        "is_expired": false,
+        "attributed_org": {
+          "org_entity_id": "org_0712e4cf1f62780003cdb9859f04dbae997c5395",
+          "external_id": "dIK7XCg",
+          "name": "Florida Institute for Human & Machine Cognition",
+          "website": "ihmc.us",
+          "method": "llm_pick"
+        },
+        "attributed_org_card": {
+          "card_source": "attributed_org",
+          "industries": [
+            "Scientific Research & Development",
+            "IT Services & Consulting"
+          ],
+          "activities": [
+            "artificial intelligence research",
+            "robotics engineering",
+            "cognitive science research",
+            "human-centered computing research",
+            "exoskeleton development",
+            "human performance studies",
+            "defense-related research"
+          ],
+          "organization_type": "Non-Profit",
+          "nb_employees": 201,
+          "year_founded": 1990,
+          "latest_fundraising": null,
+          "stock_info": null,
+          "hq_country": "US",
+          "tagline": "A nonprofit research institute developing artificial intelligence, robotics, and human-performance technologies.",
+          "aliases": [
+            "IHMC",
+            "Institute for Human & Machine Cognition",
+            "Florida Institute for Human and Machine Cognition, Inc."
+          ],
+          "activities_search_text": [
+            "artificial",
+            "artificial intelligence",
+            "artificial intelligence research",
+            "intelligence",
+            "intelligence research",
+            "research",
+            "robotics",
+            "robotics engineering",
+            "engineering"
+          ],
+          "parent_company": "Florida Board of Governors",
+          "subsidiaries": null
+        },
+        "strict_dedup_cluster_id": "adhoc___ihmc___99017",
+        "liberal_dedup_cluster": "adhoc___ihmc___99017",
+        "objectID": "adhoc___ihmc___99017"
+      },
+      {
+        "id": "adhoc___ihmc___99013",
+        "board_token": "ihmc",
+        "source": "adhoc",
+        "apply_url": "https://www.ihmc.us/ph-d-opportunity-in-collaborative-autonomy/",
+        "source_and_board_token": "adhoc_ihmc",
+        "job_information": {
+          "title": "Ph.D. Opportunity in Collaborative Autonomy",
+          "job_title_raw": "Ph.D. Opportunity in Collaborative Autonomy"
+        },
+        "v5_processed_job_data": {
+          "core_job_title": "PhD Researcher",
+          "requirements_summary": "Strong programming and algorithm development skills; experience with physical systems; familiarity with collaboration and teaming concepts; working knowledge of collaborative autonomy research; must be authorized to work in the US.",
+          "technical_tools": [
+            "ROS",
+            "Unity"
+          ],
+          "licenses_or_certifications": [],
+          "associates_degree_requirement": "Not Mentioned",
+          "associates_degree_fields_of_study": [],
+          "bachelors_degree_requirement": "Required",
+          "bachelors_degree_fields_of_study": [],
+          "masters_degree_requirement": "Preferred",
+          "masters_degree_fields_of_study": [
+            "relevant field"
+          ],
+          "doctorate_degree_requirement": "Not Mentioned",
+          "doctorate_degree_fields_of_study": [],
+          "licenses_or_certifications_not_mentioned": true,
+          "min_industry_and_role_yoe": null,
+          "401k_matching": false,
+          "is_min_industry_and_role_yoe_not_mentioned": null,
+          "min_management_and_leadership_yoe": null,
+          "is_min_management_and_leadership_yoe_not_mentioned": true,
+          "job_category": "Research and Development (R&D)",
+          "role_activities": [
+            "conducting research",
+            "developing algorithms",
+            "designing experiments"
+          ],
+          "commitment": [
+            "Full Time",
+            "Internship"
+          ],
+          "role_type": "Individual Contributor",
+          "seniority_level": "No Prior Experience Required",
+          "workplace_countries": [
+            "US"
+          ],
+          "boundless_workplace_states": [],
+          "boundless_workplace_countries": [],
+          "boundless_workplace_continents": [],
+          "workplace_continents": [
+            "North America"
+          ],
+          "workplace_states": [
+            "Florida, US"
+          ],
+          "workplace_cities": [
+            "Pensacola, Florida, US"
+          ],
+          "workplace_counties": [
+            "Escambia County, Florida, US"
+          ],
+          "workplace_type": "Onsite",
+          "workplace_physical_environment": "Office",
+          "oral_communication_level": "High",
+          "physical_labor_intensity": "Low",
+          "physical_position": "Sitting",
+          "computer_usage": "High",
+          "cognitive_demand": "High",
+          "air_travel_requirement": "None",
+          "land_travel_requirement": "None",
+          "morning_shift_work": "Not Indicated",
+          "evening_shift_work": "Not Indicated",
+          "overnight_work": "Not Indicated",
+          "formatted_workplace_location": "Pensacola, Florida, United States",
+          "on_call_requirement": "None",
+          "weekend_availability_required": false,
+          "holiday_availability_required": false,
+          "generous_paid_time_off": false,
+          "four_day_work_week": false,
+          "overtime_required": false,
+          "is_workplace_worldwide_ok": false,
+          "language_requirements": [
+            "English"
+          ],
+          "num_language_requirements": 1,
+          "number_of_workplace_cities": 1,
+          "number_of_workplace_counties": 1,
+          "number_of_workplace_states": 1,
+          "number_of_workplace_countries": 1,
+          "number_of_workplace_continents": 1,
+          "yearly_max_compensation": null,
+          "yearly_min_compensation": null,
+          "monthly_max_compensation": null,
+          "monthly_min_compensation": null,
+          "weekly_max_compensation": null,
+          "weekly_min_compensation": null,
+          "hourly_max_compensation": null,
+          "hourly_min_compensation": null,
+          "bi-weekly_min_compensation": null,
+          "bi-weekly_max_compensation": null,
+          "daily_min_compensation": null,
+          "daily_max_compensation": null,
+          "estimated_publish_date": "2026-10-01T13:59:25.000Z",
+          "estimated_publish_date_millis": 1790863165000,
+          "fair_chance": false,
+          "visa_sponsorship": false,
+          "relocation_assistance": false,
+          "military_veterans": false,
+          "tuition_reimbursement": false,
+          "retirement_plan": false,
+          "generous_parental_leave": false,
+          "is_high_school_required": true,
+          "is_driver_license_required": false,
+          "is_compensation_transparent": false,
+          "listed_compensation_currency": "USD",
+          "listed_compensation_frequency": "Yearly",
+          "security_clearance": "None",
+          "position_employer_type": "Internal Position",
+          "company_name": "Florida Institute for Human and Machine Cognition",
+          "company_website": "ihmc.us",
+          "company_sector_and_industry": "Research and Development",
+          "company_activities": [
+            "robotics research",
+            "AI research"
+          ],
+          "company_tagline": "An internationally recognized research institute advancing robotics, AI, and human-centered systems."
+        },
+        "enriched_company_data": {
+          "enriched_at": "2026-09-20T04:26:41.864Z",
+          "status": "VALID_COMPANY",
+          "name": "Florida Institute for Human & Machine Cognition",
+          "homepage_uri": "ihmc.us",
+          "hq_country": "US",
+          "parent_company": "Florida Board of Governors",
+          "subsidiaries": null,
+          "industries": [
+            "Scientific Research & Development",
+            "IT Services & Consulting"
+          ],
+          "activities": [
+            "artificial intelligence research",
+            "robotics engineering",
+            "cognitive science research",
+            "human-centered computing research",
+            "exoskeleton development",
+            "human performance studies",
+            "defense-related research"
+          ],
+          "nb_employees": 201,
+          "year_founded": 1990,
+          "tagline": "A nonprofit research institute developing artificial intelligence, robotics, and human-performance technologies.",
+          "organization_type": "Non-Profit",
+          "latest_funding_investors": null,
+          "latest_funding_type": null,
+          "latest_funding_year": null,
+          "latest_funding_amount": null,
+          "stock_exchange": null,
+          "stock_symbol": null,
+          "org_entity_id": "org_0712e4cf1f62780003cdb9859f04dbae997c5395",
+          "external_id": "dIK7XCg",
+          "board_classification": "direct_employer",
+          "org_classification": "direct_employer"
+        },
+        "_geoloc": [
+          {
+            "lat": 30.4213,
+            "lon": -87.2169
+          }
+        ],
+        "original_source_id": "99013",
+        "requisition_id": "trcxy8zvt9yzfu9e",
+        "collapse_key": "73bdb3521d119d80a8f91ddcbf352a7c8bbca23a16f7442077c124fca733bb08",
+        "is_expired": false,
+        "attributed_org": {
+          "org_entity_id": "org_0712e4cf1f62780003cdb9859f04dbae997c5395",
+          "external_id": "dIK7XCg",
+          "name": "Florida Institute for Human & Machine Cognition",
+          "website": "ihmc.us",
+          "method": "llm_pick"
+        },
+        "attributed_org_card": {
+          "card_source": "attributed_org",
+          "industries": [
+            "Scientific Research & Development",
+            "IT Services & Consulting"
+          ],
+          "activities": [
+            "artificial intelligence research",
+            "robotics engineering",
+            "cognitive science research",
+            "human-centered computing research",
+            "exoskeleton development",
+            "human performance studies",
+            "defense-related research"
+          ],
+          "organization_type": "Non-Profit",
+          "nb_employees": 201,
+          "year_founded": 1990,
+          "latest_fundraising": null,
+          "stock_info": null,
+          "hq_country": "US",
+          "tagline": "A nonprofit research institute developing artificial intelligence, robotics, and human-performance technologies.",
+          "aliases": [
+            "IHMC",
+            "Institute for Human & Machine Cognition",
+            "Florida Institute for Human and Machine Cognition, Inc."
+          ],
+          "activities_search_text": [
+            "artificial",
+            "artificial intelligence",
+            "artificial intelligence research",
+            "intelligence",
+            "intelligence research",
+            "research",
+            "robotics",
+            "robotics engineering",
+            "engineering"
+          ],
+          "parent_company": "Florida Board of Governors",
+          "subsidiaries": null
+        },
+        "strict_dedup_cluster_id": "adhoc___ihmc___99013",
+        "liberal_dedup_cluster": "adhoc___ihmc___99013",
+        "objectID": "adhoc___ihmc___99013"
+      }
+    ],
+    "ssrPage": 0,
+    "ssrTotalCount": 877,
+    "ssrCompanyCount": 395,
+    "ssrPageSize": 40,
+    "ssrIsLastPage": false,
+    "ssrUnpackJobCards": false,
+    "ssrError": null,
+    "ssrCompanyTitle": null,
+    "initialSearchState": {
+      "searchQuery": "unity developer",
+      "locations": [
+        {
+          "formatted_address": "United States",
+          "types": [
+            "country"
+          ],
+          "geometry": {
+            "location": {
+              "lat": 0,
+              "lon": 0
+            }
+          },
+          "id": "user_country",
+          "address_components": [
+            {
+              "long_name": "United States",
+              "short_name": "US",
+              "types": [
+                "country"
+              ]
+            }
+          ],
+          "options": {
+            "flexible_regions": [
+              "anywhere_in_continent",
+              "anywhere_in_world"
+            ]
+          }
+        }
+      ]
+    },
+    "autoAppliedSearchSuggestion": null,
+    "ssrOpenJob": null,
+    "ssrTimings": {
+      "esLatencyMs": 504
+    },
+    "ssrSignedIn": false
+  }
+}
