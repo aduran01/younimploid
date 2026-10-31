@@ -7,7 +7,7 @@ interface TextFieldProps {
   value: string;
   onChange: (value: string) => void;
   error?: string | undefined;
-  type?: 'text' | 'email' | 'tel' | 'url' | 'month';
+  type?: 'text' | 'email' | 'tel' | 'url' | 'month' | 'date';
   autoComplete?: string;
 }
 

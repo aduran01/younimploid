@@ -48,7 +48,7 @@ describe('tabSession', () => {
       ],
     });
     expect((await getTabSession(1))?.fillResults).toEqual([
-      { field: 'email', status: 'filled', note: '' },
+      { field: 'email', status: 'filled', note: '', ref: null, profileKey: '' },
     ]);
   });
 

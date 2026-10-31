@@ -1,10 +1,20 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { injectEngine } from '../../src/background/injectEngine';
 import { handleCommit, handleNavigationTarget } from '../../src/background/tabTracking';
 import { listApplications } from '../../src/shared/storage/applications';
 import { saveJobContext } from '../../src/shared/storage/hiringCafeTabs';
 import { updateSettings } from '../../src/shared/storage/settings';
 import { getTabSession, startTabSession } from '../../src/shared/storage/tabSession';
 import { installFakeChrome } from '../helpers/fakeChrome';
+
+vi.mock('../../src/background/injectEngine', () => ({
+  injectEngine: vi.fn(async () => undefined),
+}));
+// Every real site is still planned, so Lever stands in for a site with a finished adapter.
+vi.mock('../../src/shared/atsSites', async (original) => ({
+  ...(await original<typeof import('../../src/shared/atsSites')>()),
+  isSupportedSite: (url: string) => url.startsWith('https://jobs.lever.co/'),
+}));
 
 const HC_TAB = 1;
 const NEW_TAB = 2;
@@ -24,6 +34,7 @@ describe('tab tracking', () => {
   beforeEach(() => {
     chromeFake = installFakeChrome();
     chromeFake.setFrameUrl(HC_TAB, 0, HC_URL);
+    vi.mocked(injectEngine).mockClear();
   });
 
   it('starts a session and an application once the blank tab reaches the ATS', async () => {
@@ -144,6 +155,36 @@ describe('tab tracking', () => {
     await updateSettings({ autoStartOnHiringCafeTabs: false });
     await commit(ATS_URL);
     expect((await getTabSession(NEW_TAB))?.wouldAutoStart).toBe(false);
+  });
+
+  it('starts the engine only on a supported site with auto-start on', async () => {
+    await updateSettings({ autoStartOnHiringCafeTabs: false });
+    await openFrom();
+    await commit(ATS_URL);
+    expect(injectEngine).not.toHaveBeenCalled();
+
+    await updateSettings({ autoStartOnHiringCafeTabs: true });
+    await commit(ATS_URL);
+    expect(injectEngine).toHaveBeenCalledWith(NEW_TAB);
+    expect((await getTabSession(NEW_TAB))?.engineActive).toBe(true);
+  });
+
+  it('does not auto-start on an unsupported site', async () => {
+    await openFrom();
+    await commit('https://careers.example.com/apply');
+    expect(injectEngine).not.toHaveBeenCalled();
+  });
+
+  it('brings the engine back on each navigation once started', async () => {
+    await startTabSession(NEW_TAB, 'manual', { engineActive: true });
+    await commit('https://careers.example.com/step2');
+    expect(injectEngine).toHaveBeenCalledWith(NEW_TAB);
+  });
+
+  it('never starts the engine on a manual session by itself', async () => {
+    await startTabSession(NEW_TAB, 'manual');
+    await commit(ATS_URL);
+    expect(injectEngine).not.toHaveBeenCalled();
   });
 
   it('never flags auto-start on a manual session', async () => {

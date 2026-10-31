@@ -3,7 +3,7 @@ import { asArray, asOneOf, asString, isRecord, read, remove, serialized, write }
 
 const PAGE_STATES = [
   'unknown',
-  'job_posting',
+  'job_description',
   'application_form',
   'sign_in',
   'create_account',
@@ -13,13 +13,24 @@ const PAGE_STATES = [
 ] as const;
 export type PageState = (typeof PAGE_STATES)[number];
 
-const FILL_STATUSES = ['filled', 'skipped', 'missing', 'prefilled', 'flagged', 'failed'] as const;
+const FILL_STATUSES = [
+  'filled',
+  'prefilled',
+  'missing_required',
+  'enter_manual',
+  'needs_answer',
+  'site_differs',
+  'failed',
+] as const;
 export type FillStatus = (typeof FILL_STATUSES)[number];
 
 export interface FillResult {
   field: string;
   status: FillStatus;
   note: string;
+  // Finds the field on the current page. Null once it can't be located.
+  ref: string | null;
+  profileKey: string;
 }
 
 export interface TabSession {
@@ -30,8 +41,15 @@ export interface TabSession {
   fillResults: FillResult[];
   pausedReason: string | null;
   pageUrl: string | null;
-  // Set when the engine would start here. Nothing acts on it until Phase 2.
+  // This tab came from HiringCafe, and the site and settings allow starting by itself.
   wouldAutoStart: boolean;
+  // The engine has been started for this tab, so it comes back after each navigation.
+  engineActive: boolean;
+  // The extension can't read the current page until the user allows this site.
+  accessNeeded: boolean;
+  // The panel is asking "Is this the application form?"
+  awaitingFormAnswer: boolean;
+  evidence: string[];
 }
 
 export function sessionKey(tabId: number): string {
@@ -46,7 +64,13 @@ function normalizeFillResult(raw: unknown): FillResult | null {
   if (!isRecord(raw)) return null;
   const status = asOneOf(raw.status, FILL_STATUSES);
   if (!status || typeof raw.field !== 'string') return null;
-  return { field: raw.field, status, note: asString(raw.note) };
+  return {
+    field: raw.field,
+    status,
+    note: asString(raw.note),
+    ref: nullableString(raw.ref),
+    profileKey: asString(raw.profileKey),
+  };
 }
 
 export function normalizeTabSession(raw: unknown): TabSession | null {
@@ -62,6 +86,10 @@ export function normalizeTabSession(raw: unknown): TabSession | null {
     pausedReason: nullableString(raw.pausedReason),
     pageUrl: nullableString(raw.pageUrl),
     wouldAutoStart: raw.wouldAutoStart === true,
+    engineActive: raw.engineActive === true,
+    accessNeeded: raw.accessNeeded === true,
+    awaitingFormAnswer: raw.awaitingFormAnswer === true,
+    evidence: asArray(raw.evidence, (item) => (typeof item === 'string' ? item : null)),
   };
 }
 
@@ -72,7 +100,9 @@ export async function getTabSession(tabId: number): Promise<TabSession | null> {
 export function startTabSession(
   tabId: number,
   origin: Origin,
-  initial: Partial<Pick<TabSession, 'applicationId' | 'pageUrl' | 'wouldAutoStart'>> = {},
+  initial: Partial<
+    Pick<TabSession, 'applicationId' | 'pageUrl' | 'wouldAutoStart' | 'engineActive'>
+  > = {},
 ): Promise<TabSession> {
   return serialized(sessionKey(tabId), async () => {
     const session: TabSession = {
@@ -84,6 +114,10 @@ export function startTabSession(
       pausedReason: null,
       pageUrl: null,
       wouldAutoStart: false,
+      engineActive: false,
+      accessNeeded: false,
+      awaitingFormAnswer: false,
+      evidence: [],
       ...initial,
     };
     await write('session', sessionKey(tabId), session);

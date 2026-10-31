@@ -43,6 +43,10 @@ export function installFakeChrome() {
     },
     tabs: {
       onRemoved: { addListener: (listener: RemovedListener) => removedListeners.add(listener) },
+      // No content script is listening in tests.
+      sendMessage: async () => {
+        throw new Error('Could not establish connection');
+      },
     },
     webNavigation: {
       getFrame: async ({ tabId, frameId }: { tabId: number; frameId: number }) => {

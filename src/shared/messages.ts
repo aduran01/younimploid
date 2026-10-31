@@ -2,27 +2,69 @@
 
 import type { Application } from './storage/applications';
 import type { JobContext } from './storage/hiringCafeTabs';
-import type { TabSession } from './storage/tabSession';
+import type { Profile } from './storage/profile';
+import type { FillResult, PageState, TabSession } from './storage/tabSession';
 
 export interface TabState {
   session: TabSession | null;
   application: Application | null;
+  // The tab's current page, for asking permission on the fill button (D-026).
+  pageUrl: string | null;
 }
+
+export interface ResumePayload {
+  filename: string;
+  mime: string;
+  base64: string;
+}
+
+// Only what the engine needs. Settings are not passed whole, so the AI key can't reach a page.
+export interface FillData {
+  profile: Profile;
+  resume: ResumePayload | null;
+  autoAttachResume: boolean;
+  fieldDelayMs: number;
+}
+
+export interface FillReport {
+  state: PageState;
+  ambiguous: boolean;
+  evidence: string[];
+  phase: 'running' | 'paused' | 'asking' | 'filled';
+  pausedReason: string | null;
+  results: FillResult[];
+}
+
+export type EngineCommand =
+  | { kind: 'continue' }
+  | { kind: 'answer_form_question'; isForm: boolean }
+  | { kind: 'highlight'; ref: string };
 
 export type Message =
   | { type: 'PING' }
   | { type: 'GET_TAB_STATE'; tabId: number }
-  | { type: 'START_MANUAL_SESSION'; tabId: number }
+  | { type: 'START_FILL'; tabId: number }
+  | { type: 'CONTINUE_FILL'; tabId: number }
+  | { type: 'ANSWER_FORM_QUESTION'; tabId: number; isForm: boolean }
+  | { type: 'HIGHLIGHT_FIELD'; tabId: number; ref: string }
+  | { type: 'LIST_APPLICATIONS' }
+  | { type: 'LINK_APPLICATION'; tabId: number; applicationId: string }
   | { type: 'OPEN_SETTINGS' }
-  | { type: 'JOB_CONTEXT'; context: JobContext };
+  | { type: 'JOB_CONTEXT'; context: JobContext }
+  | { type: 'ENGINE_READY' }
+  | { type: 'FILL_REPORT'; report: FillReport }
+  // Background to content script, through chrome.tabs.sendMessage.
+  | { type: 'ENGINE_COMMAND'; command: EngineCommand };
 
 export type ResponseFor<M extends Message> = M extends { type: 'PING' }
   ? { type: 'PONG' }
-  : M extends { type: 'GET_TAB_STATE' | 'START_MANUAL_SESSION' }
+  : M extends { type: 'GET_TAB_STATE' | 'START_FILL' | 'LINK_APPLICATION' }
     ? TabState
-    : M extends { type: 'OPEN_SETTINGS' | 'JOB_CONTEXT' }
-      ? { ok: boolean }
-      : never;
+    : M extends { type: 'LIST_APPLICATIONS' }
+      ? Application[]
+      : M extends { type: 'ENGINE_READY' }
+        ? FillData | null
+        : { ok: boolean };
 
 export function sendMessage<M extends Message>(message: M): Promise<ResponseFor<M>> {
   return chrome.runtime.sendMessage(message);

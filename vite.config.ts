@@ -13,5 +13,10 @@ export default defineConfig({
   },
   test: {
     include: ['tests/**/*.test.{ts,tsx}'],
+    coverage: {
+      provider: 'v8',
+      include: ['src/content/engine/**'],
+      thresholds: { 'src/content/engine/matcher.ts': { lines: 90 } },
+    },
   },
 });

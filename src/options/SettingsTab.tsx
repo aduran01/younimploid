@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react';
+import { ATS_HOST_PATTERNS } from '../shared/atsSites';
 import { getSettings, updateSettings, type Settings } from '../shared/storage/settings';
+import { Button } from '../shared/ui/Button';
 
 export function SettingsTab() {
   const [settings, setSettings] = useState<Settings | null>(null);
+  const [sitesAllowed, setSitesAllowed] = useState(false);
 
   useEffect(() => {
     void getSettings().then(setSettings);
+    void chrome.permissions.contains({ origins: ATS_HOST_PATTERNS }).then(setSitesAllowed);
   }, []);
 
   if (!settings) return <p>Loading...</p>;
@@ -33,6 +37,18 @@ export function SettingsTab() {
         />
         Attach my resume automatically
       </label>
+      <div className="space-y-1 text-sm">
+        <p>Supported application sites: {sitesAllowed ? 'allowed' : 'not allowed yet'}</p>
+        {!sitesAllowed && (
+          <Button
+            onClick={() => {
+              void chrome.permissions.request({ origins: ATS_HOST_PATTERNS }).then(setSitesAllowed);
+            }}
+          >
+            Enable autofill on supported sites
+          </Button>
+        )}
+      </div>
       <label className="block text-sm">
         Delay between fields, in milliseconds
         <input

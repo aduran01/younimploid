@@ -119,6 +119,12 @@ export function ProfileTab() {
             error={errors.phone}
             onChange={(phone) => update({ phone })}
           />
+          <TextField
+            label="Date of birth"
+            type="date"
+            value={profile.dateOfBirth}
+            onChange={(dateOfBirth) => update({ dateOfBirth })}
+          />
         </div>
       </Section>
 

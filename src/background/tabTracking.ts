@@ -1,4 +1,4 @@
-import { findAtsSource } from '../shared/atsSites';
+import { findAtsSource, isSupportedSite } from '../shared/atsSites';
 import { isHiringCafeUrl } from '../shared/hiringCafe';
 import { createApplication, linkTab } from '../shared/storage/applications';
 import { serialized } from '../shared/storage/core';
@@ -10,6 +10,7 @@ import {
   takeJobContext,
 } from '../shared/storage/hiringCafeTabs';
 import { getSettings } from '../shared/storage/settings';
+import { startEngine } from './engine';
 import {
   clearTabSession,
   getTabSession,
@@ -47,7 +48,7 @@ function inTabOrder(tabId: number, task: () => Promise<void>): Promise<void> {
 
 async function wouldAutoStart(url: string): Promise<boolean> {
   const { autoStartOnHiringCafeTabs } = await getSettings();
-  return autoStartOnHiringCafeTabs && findAtsSource(url) !== null;
+  return autoStartOnHiringCafeTabs && isSupportedSite(url);
 }
 
 export function handleNavigationTarget(target: NavigationTarget): Promise<void> {
@@ -82,6 +83,7 @@ async function startFromHiringCafe(tabId: number, sourceTabId: number, url: stri
     wouldAutoStart: await wouldAutoStart(url),
   });
   await clearOpenedFromHiringCafe(tabId);
+  if (await wouldAutoStart(url)) await startEngine(tabId);
 }
 
 export function handleCommit({ tabId, frameId, url, transitionType }: Commit): Promise<void> {
@@ -94,10 +96,10 @@ export function handleCommit({ tabId, frameId, url, transitionType }: Commit): P
         await clearTabSession(tabId);
         await clearOpenedFromHiringCafe(tabId);
       } else {
-        await updateTabSession(tabId, {
-          pageUrl: url,
-          wouldAutoStart: session.origin === 'hiringcafe' && (await wouldAutoStart(url)),
-        });
+        const autoStart = session.origin === 'hiringcafe' && (await wouldAutoStart(url));
+        await updateTabSession(tabId, { pageUrl: url, wouldAutoStart: autoStart });
+        // Each new page gets the engine again, which is how filling resumes after a redirect.
+        if (session.engineActive || autoStart) await startEngine(tabId);
       }
       return;
     }

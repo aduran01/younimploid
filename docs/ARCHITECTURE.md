@@ -1,6 +1,6 @@
 # Architecture
 
-How younimploid fits together. Product requirements are in [SPEC.md](SPEC.md); the reasons behind choices are in [DECISIONS.md](DECISIONS.md). Autofill, adapters and AI are planned; the rest of this page exists.
+How younimploid fits together. Product requirements are in [SPEC.md](SPEC.md); the reasons behind choices are in [DECISIONS.md](DECISIONS.md). Site adapters and AI are planned; the rest of this page exists.
 
 ## Components
 
@@ -63,4 +63,8 @@ The user supplies phases in increments.
 
 ### Phase 1: Pivot and companion foundation
 
-Docs and repo realignment (1.2), storage (1.3), the profile page (1.4), the side panel (1.5) and detection of tabs opened from HiringCafe (1.6) are built. No autofill yet.
+Docs and repo realignment (1.2), storage (1.3), the profile page (1.4), the side panel (1.5) and detection of tabs opened from HiringCafe (1.6) are built.
+
+### Phase 2: Autofill
+
+The generic engine (2.1) and page classifier with sign-in handoff (2.2) are built, in `src/content/engine/`. The background injects `src/content/atsEngine.ts` on each navigation once a tab's engine is active. It asks for the profile and resume with `ENGINE_READY`, reports with `FILL_REPORT`, and takes panel actions through `ENGINE_COMMAND`. Order on a page: classify, attach resume, settle, fill with a wall check before each field, settle, re-read what was written. There is no submit path.

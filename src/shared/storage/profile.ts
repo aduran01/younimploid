@@ -55,6 +55,8 @@ export interface Profile {
   lastName: string;
   email: string;
   phone: string;
+  // YYYY-MM-DD, or empty. Stored and filled by the user's choice (D-032).
+  dateOfBirth: string;
   address: Address;
   links: ProfileLink[];
   workHistory: WorkHistoryEntry[];
@@ -107,6 +109,7 @@ export function normalizeProfile(raw: unknown): Profile {
     lastName: asString(source.lastName),
     email: asString(source.email),
     phone: asString(source.phone),
+    dateOfBirth: asString(source.dateOfBirth),
     address: {
       line1: asString(address.line1),
       line2: asString(address.line2),
