@@ -1,4 +1,4 @@
-// Shapes observed in tests/fixtures/hiringcafe/. See docs/HIRINGCAFE.md.
+// Reference only: nothing fetches HiringCafe. Shapes observed in tests/fixtures/hiringcafe/. See docs/HIRINGCAFE.md.
 // Fields not seen in every fixture are optional. String values stay plain strings
 // because the endpoint is unofficial and may add values at any time.
 // job_information's user ID lists (viewedByUsers etc.) are deliberately not typed.

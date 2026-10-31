@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import samplesText from '../fixtures/hiringcafe/searchstate-samples.txt?raw';
+import samplesText from './searchstate-samples.txt?raw';
 import {
   buildSearchState,
   decodeSearchState,
   encodeSearchState,
   type SearchFilters,
-} from '../../src/shared/hiringcafe/searchState';
+} from './searchState';
 
 const samples = samplesText.trim().split('\n');
 

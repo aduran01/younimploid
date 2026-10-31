@@ -8,8 +8,8 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), crx({ manifest })],
   build: {
     rollupOptions: {
-      // The dashboard is opened by the background, so the manifest does not reference it.
-      input: { dashboard: 'src/dashboard/index.html' },
+      // The full-tab page is opened by the background, so the manifest does not reference it.
+      input: { options: 'src/options/index.html' },
     },
   },
   test: {

@@ -1,3 +1,125 @@
+# younimploid: product spec
+
+A personal Chrome extension (Manifest V3) that works alongside hiring.cafe. The user browses and filters jobs on hiring.cafe. The extension runs in a Chrome side panel and autofills applications, including attaching the resume, on the employer's own site. The original reasoning is in [research/direction-change.md](research/direction-change.md).
+
+## Workflow
+
+1. The user browses and filters jobs on hiring.cafe with the side panel open.
+2. The user clicks "Apply Now", and hiring.cafe opens the job posting in a new tab.
+3. If that tab came from hiring.cafe and the site is supported, the extension starts automatically.
+4. If the page shows only the job description, the site's adapter tries to get to the application form.
+5. The extension fills the fields from the profile and attaches the resume.
+6. The side panel shows what was filled, what's missing and what needs an answer.
+7. The user reviews and submits.
+8. The application is recorded in the extension's tracker.
+
+On any other tab, a "Fill this application" button starts the same process, so nothing fills without the user asking.
+
+## Sign-in handoff
+
+1. The extension detects a sign-in or create-account page and pauses.
+2. The side panel asks the user to sign in or create the account, and the tracker marks the job as waiting on the user.
+3. The user handles everything on those pages, including passwords, email verification and CAPTCHAs. The extension types nothing there, not even a name or email.
+4. When an application form appears, filling resumes automatically. An "I'm signed in, continue" button covers cases where it doesn't notice.
+5. If it can't tell a sign-up page from an application form, it pauses and asks.
+6. Values a site pre-fills are never overwritten. Any that differ from the profile are flagged.
+
+Progress is saved per tab so it survives redirects. If a verification link opens in a different tab, the user uses the "Fill this application" button there, and the tracker entry may need linking by hand.
+
+## Decisions
+
+| Decision | Choice |
+| --- | --- |
+| Interface | Chrome side panel, because a popup closes when the user clicks the page |
+| Starting autofill | Automatic on tabs opened from hiring.cafe, including the resume, with a button everywhere else |
+| Submitting | Manual. Optional auto-submit is a later, opt-in feature that is off by default |
+| Tracker | Our own |
+| Profile and settings | A full-tab page, since the panel is narrow |
+| Job context | Read from the hiring.cafe page on a best-effort basis, with the application page as the fallback. Autofill never depends on it |
+
+## Requirements
+
+### Autofill engine
+
+- A shared generic field matcher (label text, name, id, autocomplete and aria attributes mapped to profile fields), plus small per-ATS adapters that override only what it gets wrong (multi-step flows, custom widgets, file uploads, login walls).
+- Adding an adapter is a small, documented unit of work.
+- Greenhouse, Lever and Ashby come first, then coverage expands.
+
+Adapter registry seed. Verify each before use:
+
+| ATS (`source`) | Domains |
+| --- | --- |
+| greenhouse (grnhse) | boards.greenhouse.io, job-boards.greenhouse.io |
+| lever | jobs.lever.co |
+| ashby | jobs.ashbyhq.com |
+| workday | *.myworkdayjobs.com |
+| smartrecruiters | jobs.smartrecruiters.com |
+| icims (icims2) | *.icims.com |
+| taleo | *.taleo.net |
+| brassring | sjobs.brassring.com |
+| jazzhr | *.applytojob.com |
+| ultipro/UKG | *.ultipro.com |
+| dayforce | *.dayforcehcm.com |
+| eightfold | *.eightfold.ai |
+| dover | app.dover.com |
+| adp | workforcenow.adp.com, myjobs.adp.com |
+| rippling | ats.rippling.com |
+| jobvite | jobs.jobvite.com |
+
+### Review, confidence and submission
+
+- After autofill, compute a confidence score. Any unfilled required field, custom free-text question, unusual widget, failed upload, or login or CAPTCHA wall means LOW confidence.
+- LOW confidence never submits. The review panel highlights what was filled, what's missing and what needs a human answer.
+- HIGH confidence (all standard fields filled, no custom questions) may auto-submit only if the user enabled it. It is off by default.
+- Always show a pre-submit summary. Keep an audit log of what was filled and sent, which the user can inspect.
+- Never mass-fire submissions.
+
+### Application materials
+
+- One saved profile: name, contact, address, links, work history, education, work authorization and EEO answers, and a resume file. Stored locally.
+- AI drafts for custom screening questions, tunable in settings through an editable system prompt, and always shown for review before use.
+- AI-tailored cover letters and resumes from the user's own templates. Templates are an immutable layout: only content may change. Every generated document is shown for review and approval, with a clear before and after, before it is attached or submitted.
+- The user's own AI API key (Anthropic and/or OpenAI), stored in `chrome.storage.local` and entered in settings. No hardcoded keys and no third-party proxy.
+
+### Safety
+
+- Never solve or bypass CAPTCHAs or bot detection. On detecting one, stop, mark the application as needing manual completion, and hand off.
+- Never fill payment, SSN or government ID fields. Leave them blank and flag them.
+- Never create accounts or type passwords.
+- Pacing is for page stability only, never to imitate a human or evade detection.
+
+### Deliverables
+
+- Extension source, loadable unpacked, and a build script.
+- A README with install and usage, and a clear note that ATS Terms of Service risks apply, misuse can get accounts banned, and this is a personal-use tool.
+- The adapter registry and a guide for adding adapters.
+
+### Inputs from the user
+
+- Resume and cover-letter templates.
+- Profile details and EEO and work-authorization answers.
+- Their own AI API key, entered in the extension and never committed.
+
+Ask before making assumptions about ATS form behavior. Prefer small, testable adapters over broad, brittle ones.
+
+## Known limits
+
+- **Coverage:** some forms will fill completely, some partly and some not at all.
+- **Resume upload:** some sites upload or read the resume as soon as it's attached, before submit, and a few may overwrite fields already filled.
+- **Harder sites:** custom dropdowns, drag-and-drop uploads, forms embedded on company domains, and multi-step systems like Workday.
+- **Job details for the tracker:** reading them from hiring.cafe could break if the site is redesigned.
+- **Untested:** none of this has been tried on a real application form yet.
+
+## Removed from the original direction
+
+The job search dashboard (search, filters, job cards, detail views), the HiringCafe fetch client, and the optional GitHub Pages shell.
+
+---
+
+# Superseded direction (2026-10-31)
+
+Kept as history. This is not the current spec.
+
 Project: "younimploid" — a HiringCafe-style job browser + auto-apply browser extension
 What I'm building
 

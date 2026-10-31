@@ -1,5 +1,7 @@
 # HiringCafe data contract
 
+**Reference only.** The extension no longer fetches HiringCafe (see [research/direction-change.md](research/direction-change.md)). This records what was observed, at `hiringcafe.com`, in case job data shapes are useful later.
+
 An unofficial, undocumented endpoint used for personal use. Treat all of it as fragile. Types are in `src/shared/hiringcafe/types.ts`; fixtures are in `tests/fixtures/hiringcafe/`. Observed 2026-10-31.
 
 ## Access

@@ -1,4 +1,4 @@
-import type { SearchLocation, SearchState } from './types';
+import type { SearchLocation, SearchState } from '../src/shared/hiringcafe/types';
 
 const PARAM = 'searchState';
 
