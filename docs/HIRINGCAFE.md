@@ -4,6 +4,10 @@
 
 An unofficial, undocumented endpoint used for personal use. Treat all of it as fragile. Types are in `src/shared/hiringcafe/types.ts`; fixtures are in `tests/fixtures/hiringcafe/`. Observed 2026-10-31.
 
+## Live site notes
+
+Checked in Chrome on 2026-10-31. `hiring.cafe` redirects to `hiringcafe.com`. Job pages have `JobPosting` JSON-LD. The Apply button is a `<button>` that opens `about:blank` with `window.open`, then sends that tab to the ATS. Job card links use `rel="noopener noreferrer"` and go to `/job/...` on the same site. See D-027 and D-029.
+
 ## Access
 
 | Request | Result |

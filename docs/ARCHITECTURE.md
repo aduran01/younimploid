@@ -1,6 +1,6 @@
 # Architecture
 
-How younimploid fits together. Product requirements are in [SPEC.md](SPEC.md); the reasons behind choices are in [DECISIONS.md](DECISIONS.md). Only the scaffold, the full-tab page and the storage layer exist so far; the rest is planned.
+How younimploid fits together. Product requirements are in [SPEC.md](SPEC.md); the reasons behind choices are in [DECISIONS.md](DECISIONS.md). Autofill, adapters and AI are planned; the rest of this page exists.
 
 ## Components
 
@@ -49,7 +49,9 @@ All access goes through `src/shared/storage/`, and every read is validated.
 
 | Key | Contents |
 | --- | --- |
-| `tabSession:<tabId>` | Origin, application, step, page state, fill results and paused reason. Survives redirects, cleared when the tab closes. Only trusted extension contexts can read it, so content scripts go through the background |
+| `tabSession:<tabId>` | Origin, application, step, page state, fill results, paused reason, page URL and the auto-start flag. Survives redirects, cleared when the tab closes. Only trusted extension contexts can read it, so content scripts go through the background |
+| `openedFromHiringCafe:<tabId>` | Marks a new tab opened from HiringCafe until it reaches a page off the site |
+| `jobContext:<tabId>` | Title, company and URL from the latest Apply click in that HiringCafe tab. Used once, valid for 60 seconds |
 
 IndexedDB (extension origin) holds the resume file. Content scripts cannot read this database directly, so it reaches them through the background.
 
@@ -61,4 +63,4 @@ The user supplies phases in increments.
 
 ### Phase 1: Pivot and companion foundation
 
-Docs and repo realignment (1.2) and storage (1.3) are done. Still to come: the profile page, the side panel, and detection of tabs opened from hiring.cafe. No autofill yet.
+Docs and repo realignment (1.2), storage (1.3), the profile page (1.4), the side panel (1.5) and detection of tabs opened from HiringCafe (1.6) are built. No autofill yet.

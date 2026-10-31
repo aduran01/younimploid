@@ -3,30 +3,33 @@
 Updated at the end of every Claude Code session. Keep under 40 lines.
 
 ### Current goal
-Phase 1 — pivot and companion foundation: a side-panel autofill companion to hiring.cafe. No autofill yet.
+Phase 1 — pivot and companion foundation: a side-panel autofill companion to hiring.cafe. Built; waiting on the user's Chrome test. No autofill yet.
 
 ### Done
-Session 1.2: docs, CLAUDE.md and scaffold realigned; src/options/ is the full-tab page; searchState.ts shelved.
-Session 1.3: typed, validated, migrated storage in src/shared/storage/, with backup and subscriptions.
+Sessions 1.2 and 1.3: docs realigned; validated, migrated storage.
+Session 1.4: profile, resume, settings, tracker placeholder and backup tabs on the full-tab page.
+Session 1.5: side panel following the active tab; manual sessions; activeTab answered (D-026).
+Session 1.6: HiringCafe tab detection, sessions across redirects, read-only job context (D-027, D-029).
 
 ### Next
-Session 1.4 onward: profile page, side panel, detection of tabs opened from hiring.cafe. Prompts not received yet; the user supplies them.
+1. User runs the manual Chrome test, above all Apply click detection, which no unit test can prove.
+2. User approves or changes D-028 (optional host permissions and injection), then Session 2.1.
 
 ### Open questions
-1. Submission limits, if auto-submit is ever enabled.
-2. What may count as HIGH confidence: EEO answers, resume upload, AI-written content?
-3. AI providers: Anthropic, OpenAI, or both? (Settings allows either.)
-4. Template format: .docx and/or structured? Is PDF output needed? (Decide once templates are provided.)
-5. Audit log export and clearing. (Capped at 1,000 entries for now.)
-6. Content-script injection: static matches vs programmatic with optional host permissions. Needed soon for auto-start.
+1. Approve D-028? It decides what appears at install and first use.
+2. Submission limits, if auto-submit is ever enabled.
+3. What may count as HIGH confidence: EEO answers, resume upload, AI-written content?
+4. AI providers: Anthropic, OpenAI, or both? (Settings allows either.)
+5. Template format: .docx and/or structured? Is PDF output needed? (Decide once templates are provided.)
+6. Audit log export and clearing. (Capped at 1,000 entries for now.)
 
 ### Noticed, not fixed
-Earlier captures in docs/HIRINGCAFE.md were at hiringcafe.com, while D-019 says hiring.cafe. Tab detection must confirm against the real site.
+Never run in a loaded extension: the service worker, real IndexedDB, restart survival. The pages were only exercised on localhost with a stubbed chrome object.
+Each Apply click creates an in_progress application, so clicking twice or abandoning a tab leaves extras. Tracker UI (2.6) should allow cleanup.
+The build lists the content script's chunks as web_accessible_resources on HiringCafe (added by @crxjs), so that site could detect the extension.
+Selects for EEO and work authorization use common wording; real forms vary, so 2.x must map them.
 Git history still has the user's earlier location: commit fd143e8 contains Fort Washington. Check before making the repo public.
-Toolbar icon still opens the full-tab page until the side panel session changes it.
-Resume storage is only unit tested with an in-memory store; real IndexedDB needs a manual check once the profile page uses it.
 npm audit: 10 moderate findings, all through eslint/typescript-eslint (minimatch). Dev tooling only.
-Branch is master (pushed to origin/master), but the main branch is reported as main.
 Hook misses some git writes: git branch -D, rm, mv, pull, update-ref are allowed.
 Hook falsely blocks read-only commands containing a keyword, e.g. git diff -- src/add.js.
 Edit/Write deny rules for .claude/ were removed from settings.json, so only CLAUDE.md protects that folder.

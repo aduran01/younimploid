@@ -1,19 +1,38 @@
-import { useEffect, useState } from 'react';
-import { sendMessage } from '../shared/messages';
+import { useState } from 'react';
+import { BackupTab } from './BackupTab';
+import { ProfileTab } from './ProfileTab';
+import { ResumeTab } from './ResumeTab';
+import { SettingsTab } from './SettingsTab';
+
+const TABS = ['Profile', 'Resume', 'Settings', 'Tracker', 'Backup'] as const;
+type Tab = (typeof TABS)[number];
 
 export function App() {
-  const [status, setStatus] = useState('Checking background...');
-
-  useEffect(() => {
-    sendMessage({ type: 'PING' })
-      .then((response) => setStatus(`Background replied: ${response.type}`))
-      .catch(() => setStatus('Background did not reply'));
-  }, []);
+  const [tab, setTab] = useState<Tab>('Profile');
 
   return (
-    <main className="p-8">
+    <main className="mx-auto max-w-3xl p-8">
       <h1 className="text-2xl font-bold">younimploid</h1>
-      <p className="mt-2 text-gray-600">{status}</p>
+      <nav className="mt-4 flex gap-1 border-b border-gray-300" aria-label="Sections">
+        {TABS.map((name) => (
+          <button
+            key={name}
+            type="button"
+            aria-current={tab === name ? 'page' : undefined}
+            className={`px-3 py-2 text-sm ${tab === name ? 'border-b-2 border-blue-700 font-semibold' : 'text-gray-600'}`}
+            onClick={() => setTab(name)}
+          >
+            {name}
+          </button>
+        ))}
+      </nav>
+      <div className="mt-6">
+        {tab === 'Profile' && <ProfileTab />}
+        {tab === 'Resume' && <ResumeTab />}
+        {tab === 'Settings' && <SettingsTab />}
+        {tab === 'Tracker' && <p className="text-gray-600">The tracker arrives in Phase 2.</p>}
+        {tab === 'Backup' && <BackupTab />}
+      </div>
     </main>
   );
 }

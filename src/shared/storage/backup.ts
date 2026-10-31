@@ -64,11 +64,7 @@ function parseResume(raw: unknown) {
   }
 }
 
-// Everything is validated first, so a rejected backup changes nothing.
-export async function importBackup(
-  json: string,
-  store: ResumeStore = indexedDbResumeStore,
-): Promise<void> {
+function parseBackup(json: string): Record<string, unknown> {
   let parsed: unknown;
   try {
     parsed = JSON.parse(json);
@@ -82,7 +78,37 @@ export async function importBackup(
   if (version > CURRENT_SCHEMA_VERSION) {
     throw new BackupError('This backup is from a newer version of younimploid.');
   }
+  return parsed;
+}
 
+export interface BackupSummary {
+  exportedAt: number | null;
+  hasProfile: boolean;
+  hasSettings: boolean;
+  applicationCount: number | null;
+  auditEntryCount: number | null;
+  hasResume: boolean;
+}
+
+// Says what an import would replace, and writes nothing.
+export function summarizeBackup(json: string): BackupSummary {
+  const parsed = parseBackup(json);
+  return {
+    exportedAt: asFiniteNumber(parsed.exportedAt),
+    hasProfile: isRecord(parsed.profile),
+    hasSettings: isRecord(parsed.settings),
+    applicationCount: Array.isArray(parsed.applications) ? parsed.applications.length : null,
+    auditEntryCount: Array.isArray(parsed.auditLog) ? parsed.auditLog.length : null,
+    hasResume: parseResume(parsed.resume) !== null,
+  };
+}
+
+// Everything is validated first, so a rejected backup changes nothing.
+export async function importBackup(
+  json: string,
+  store: ResumeStore = indexedDbResumeStore,
+): Promise<void> {
+  const parsed = parseBackup(json);
   const resume = parseResume(parsed.resume);
 
   // Sections missing from the file keep what's stored, so a partial backup can't erase data.

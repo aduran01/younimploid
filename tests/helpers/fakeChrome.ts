@@ -31,6 +31,7 @@ export function installFakeChrome() {
   const removedListeners = new Set<RemovedListener>();
   const local = fakeArea('local', changeListeners);
   const session = fakeArea('session', changeListeners);
+  const frames = new Map<string, string>();
   vi.stubGlobal('chrome', {
     storage: {
       local,
@@ -43,10 +44,19 @@ export function installFakeChrome() {
     tabs: {
       onRemoved: { addListener: (listener: RemovedListener) => removedListeners.add(listener) },
     },
+    webNavigation: {
+      getFrame: async ({ tabId, frameId }: { tabId: number; frameId: number }) => {
+        const url = frames.get(`${tabId}:${frameId}`);
+        return url ? { url } : null;
+      },
+    },
   });
   return {
     local: local.data,
     session: session.data,
+    setFrameUrl: (tabId: number, frameId: number, url: string) => {
+      frames.set(`${tabId}:${frameId}`, url);
+    },
     closeTab: (tabId: number) => {
       for (const listener of removedListeners) listener(tabId);
     },

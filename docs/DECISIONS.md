@@ -116,6 +116,7 @@ Check this log before re-deciding anything. Add new entries at the bottom. Unans
 
 ## D-019: The HiringCafe domain is hiring.cafe
 
+- **Status:** Partly superseded by D-022.
 - **Date:** 2026-10-31
 - **Decision:** The extension recognizes `hiring.cafe` only.
 - **Rationale:** User's decision. Earlier captures in `docs/HIRINGCAFE.md` went to `hiringcafe.com`, so tab detection must confirm this against the real site.
@@ -131,3 +132,75 @@ Check this log before re-deciding anything. Add new entries at the bottom. Unans
 - **Date:** 2026-10-31
 - **Decision:** One module per entity in `src/shared/storage/`, with hand-written validators (per D-011) on every read and ordered migrations. Values failing validation fall back to defaults or are dropped. `autoSubmit` is typed as `false` and forced to false by the validator, including on backup import.
 - **Rationale:** Validators that copy only known fields also mean sensitive or unknown fields can't enter the profile. Auto-submit can't be turned on until a later session deliberately changes the type.
+
+## D-022: HiringCafe is recognized on both of its domains
+
+- **Date:** 2026-10-31
+- **Decision:** The extension recognizes `hiring.cafe` and `hiringcafe.com`, with or without `www`. This supersedes the "`hiring.cafe` only" part of D-019.
+- **Rationale:** Checked in Chrome: `https://hiring.cafe/` redirects to `https://hiringcafe.com/`, so matching only `hiring.cafe` would never see a real Apply click.
+
+## D-023: Pacing setting stays a single value
+
+- **Date:** 2026-10-31
+- **Decision:** The Settings tab shows one delay value, not the "field delay range" in the Session 1.4 prompt.
+- **Rationale:** D-020 already rejected a range, because randomized timing is too close to imitating a human.
+
+## D-024: Toolbar icon opens the side panel
+
+- **Date:** 2026-10-31
+- **Decision:** Clicking the toolbar icon toggles the side panel, through `setPanelBehavior({ openPanelOnActionClick: true })`. The profile and settings page opens from a link in the panel and from "Options" in the icon's right-click menu (`options_page`). This differs from Session 1.4 requirement 7, which had the icon open the page.
+- **Rationale:** One click can't do both, and the panel is the main interface (D-012). [sidePanel docs](https://developer.chrome.com/docs/extensions/reference/api/sidePanel)
+
+## D-025: One global side panel that follows the active tab
+
+- **Date:** 2026-10-31
+- **Decision:** The manifest sets one `side_panel.default_path`, with no per-tab `setOptions`. The panel asks for the active tab with `tabs.query` and re-reads on `tabs.onActivated` and on storage changes.
+- **Rationale:** The docs say a panel set for a specific `tabId` is a different instance from the default, and that a panel is hidden on tabs where it isn't enabled. The workflow needs it to stay open across tabs. `tabs.query` needs no permission here, since only the tab ID is read. [sidePanel docs](https://developer.chrome.com/docs/extensions/reference/api/sidePanel)
+
+## D-026: A click in the side panel does not grant activeTab
+
+- **Date:** 2026-10-31
+- **Decision:** "Fill this application" will not rely on `activeTab`. Proposed for Session 2.1: on click, call `chrome.permissions.request` for that tab's origin, with `https://*/*` under `optional_host_permissions`, then inject with `chrome.scripting`.
+- **Rationale:** The [activeTab docs](https://developer.chrome.com/docs/extensions/develop/concepts/activeTab) list exactly four invocations: executing an action, a context menu item, a `commands` keyboard shortcut, and accepting an omnibox suggestion. A click inside a side panel isn't listed. The [permissions docs](https://developer.chrome.com/docs/extensions/reference/api/permissions) require a user gesture and describe this `optional_host_permissions` pattern for hosts found at runtime.
+- **Not yet tested:** that a panel button click counts as that gesture. The docs don't name side panels, so 2.1 must try it first.
+
+## D-027: Detect HiringCafe tabs with webNavigation.onCreatedNavigationTarget
+
+- **Date:** 2026-10-31
+- **Decision:** A tab counts as opened from HiringCafe when `webNavigation.onCreatedNavigationTarget` fires and `webNavigation.getFrame` shows the source frame is on HiringCafe. The session and application start when that tab first commits a non-HiringCafe http(s) page. Every later main-frame commit updates the session. A user-driven transition (typed, bookmark, omnibox search) or a return to HiringCafe ends it; the application is kept.
+- **Options compared:**
+
+| Option | Permission | Problem |
+| --- | --- | --- |
+| `tabs.onCreated` + `openerTabId` | None for the ID; `tabs` or host access for the opener's URL | From memory of Chromium's tab strip, Ctrl+T can set an opener too, which would break "a tab I open myself never counts". Unverified, and not stated in the docs |
+| `webNavigation.onCreatedNavigationTarget` (**chosen**) | `webNavigation`; `getFrame` then gives the source URL, so `tabs` isn't needed | Install warning about browsing history |
+| `document.referrer` or `window.opener` in the new page | Needs injection into the new page | Unavailable with `noreferrer` or `noopener` |
+
+- **Observed on the real site:** the job page's Apply button is a `<button>` that calls `window.open('about:blank', '_blank')`, gets a window back, then points that tab at the ATS. So the tab starts blank and `noopener` doesn't apply to it. Job card links are `target="_blank" rel="noopener noreferrer"` but go to `/job/...` on HiringCafe, which is why no session starts until the tab leaves the site.
+- **noopener:** the docs for both events say nothing about it. **Not yet tested in a loaded extension;** the user's Apply click test is the real check.
+
+## D-028: How content scripts reach ATS tabs (proposed, not built)
+
+- **Date:** 2026-10-31
+- **Status:** Proposed. Needs the user's approval before Session 2.1. Nothing here is in the manifest yet.
+- **Decision:** Add `scripting`, and list the supported ATS domains under `optional_host_permissions`. Settings gets an "Enable autofill on supported sites" control that calls `permissions.request`. The background then injects with `chrome.scripting.executeScript` when a tracked tab commits on a granted site.
+- **What the user sees:** at install, warnings for the required permissions only (browsing history, and data on the HiringCafe sites). At first use, one Chrome prompt from Settings listing the ATS sites. On an ungranted site, the panel explains and offers to request that one.
+- **Rationale:** Static `content_scripts` would demand every ATS domain at install. `executeScript` needs `scripting` plus host access, per the [scripting docs](https://developer.chrome.com/docs/extensions/reference/api/scripting). `permissions.request` needs a user gesture, so it can't fire by itself when a tab opens, hence the up-front step in Settings. `activeTab` doesn't help (D-026).
+
+## D-029: Job context comes from the page's JobPosting data
+
+- **Date:** 2026-10-31
+- **Decision:** The read-only content script listens for clicks on Apply controls and reads `JobPosting` JSON-LD (`title`, `hiringOrganization.name`), falling back to the `h1` and the element after it on `/job/` pages. It keeps title, company and the URL without its query string. The context is used once, and only within 60 seconds of the click.
+- **Rationale:** The page's class names are generated utilities, so structured data is likely to outlast them. This keeps D-017's best-effort rule: on any failure the application has `detailsSource: 'application_page'`.
+
+## D-030: The options page uses storage modules directly
+
+- **Date:** 2026-10-31
+- **Decision:** The full-tab page calls `src/shared/storage/` directly for profile, resume, settings and backup. The side panel and content scripts go through typed messages.
+- **Rationale:** The page is a trusted extension context with direct access to storage and IndexedDB, and resume blobs don't pass cleanly through runtime messages. This narrows the CLAUDE.md line saying the full-tab page talks to the background via messages.
+
+## D-031: No DOM test library
+
+- **Date:** 2026-10-31
+- **Decision:** UI tests use `react-dom/server` and pure functions, with no jsdom or Testing Library.
+- **Rationale:** No dependency without asking. These cover state rendering and the import confirmation; clicks are covered by the manual steps.

@@ -29,9 +29,12 @@ export interface TabSession {
   pageState: PageState;
   fillResults: FillResult[];
   pausedReason: string | null;
+  pageUrl: string | null;
+  // Set when the engine would start here. Nothing acts on it until Phase 2.
+  wouldAutoStart: boolean;
 }
 
-function sessionKey(tabId: number): string {
+export function sessionKey(tabId: number): string {
   return `tabSession:${tabId}`;
 }
 
@@ -57,6 +60,8 @@ export function normalizeTabSession(raw: unknown): TabSession | null {
     pageState: asOneOf(raw.pageState, PAGE_STATES) ?? 'unknown',
     fillResults: asArray(raw.fillResults, normalizeFillResult),
     pausedReason: nullableString(raw.pausedReason),
+    pageUrl: nullableString(raw.pageUrl),
+    wouldAutoStart: raw.wouldAutoStart === true,
   };
 }
 
@@ -64,7 +69,11 @@ export async function getTabSession(tabId: number): Promise<TabSession | null> {
   return normalizeTabSession(await read('session', sessionKey(tabId)));
 }
 
-export function startTabSession(tabId: number, origin: Origin): Promise<TabSession> {
+export function startTabSession(
+  tabId: number,
+  origin: Origin,
+  initial: Partial<Pick<TabSession, 'applicationId' | 'pageUrl' | 'wouldAutoStart'>> = {},
+): Promise<TabSession> {
   return serialized(sessionKey(tabId), async () => {
     const session: TabSession = {
       origin,
@@ -73,6 +82,9 @@ export function startTabSession(tabId: number, origin: Origin): Promise<TabSessi
       pageState: 'unknown',
       fillResults: [],
       pausedReason: null,
+      pageUrl: null,
+      wouldAutoStart: false,
+      ...initial,
     };
     await write('session', sessionKey(tabId), session);
     return session;

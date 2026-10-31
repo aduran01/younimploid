@@ -8,11 +8,10 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), crx({ manifest })],
   build: {
     rollupOptions: {
-      // The full-tab page is opened by the background, so the manifest does not reference it.
-      input: { options: 'src/options/index.html' },
+      input: { options: 'src/options/index.html', sidepanel: 'src/sidepanel/index.html' },
     },
   },
   test: {
-    include: ['tests/**/*.test.ts'],
+    include: ['tests/**/*.test.{ts,tsx}'],
   },
 });
