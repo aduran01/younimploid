@@ -63,3 +63,9 @@ Check this log before re-deciding anything. Add new entries at the bottom. Unans
 - **Date:** 2026-10-31
 - **Decision:** Pin `typescript` 6.0.3 rather than the latest 7.x.
 - **Rationale:** `typescript-eslint` 8.72.1 requires TypeScript below 6.1.
+
+## D-011: No runtime validation library for HiringCafe responses yet
+
+- **Date:** 2026-10-31
+- **Decision:** Use plain TypeScript types, with no `zod`. Any response checks are small hand-written guards.
+- **Rationale:** No dependency is added without a clear need, and most fields are only displayed. Revisit if malformed data causes real problems.
