@@ -10,11 +10,14 @@ Never edit anything under .claude/ or .git/.
 ### Stack
 Manifest V3, TypeScript (strict, noUncheckedIndexedAccess), React, Vite, Tailwind, Vitest.
 ESLint (typescript-eslint) + Prettier.
+Chrome only (latest stable). Node 22, npm.
 Exact versions live in package.json; record tooling choices in @docs/DECISIONS.md.
 ### Architecture rules
 ALL network calls live in the background service worker (HiringCafe, AI providers).
 Content scripts only read/write the ATS page DOM and message the background. No fetches.
-The dashboard never fetches HiringCafe directly; it sends typed messages to the background.
+The dashboard is a full-tab page opened from the toolbar icon. It never fetches HiringCafe directly; it sends typed messages to the background.
+Job data comes only from HiringCafe's JSON data route. Never visit posting sites to collect job information; ATS pages are opened only for the Apply flow.
+Resume and template files live in IndexedDB (extension origin); everything else lives in chrome.storage.local. Content scripts get files through the background.
 All message types live in src/shared/messages.ts as one discriminated union.
 The service worker can die at any time: anything durable goes to storage, never only memory.
 Service workers have no DOMParser: parse HTML/__NEXT_DATA__ with string logic.
