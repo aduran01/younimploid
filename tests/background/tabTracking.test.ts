@@ -10,7 +10,7 @@ import { installFakeChrome } from '../helpers/fakeChrome';
 vi.mock('../../src/background/injectEngine', () => ({
   injectEngine: vi.fn(async () => undefined),
 }));
-// Every real site is still planned, so Lever stands in for a site with a finished adapter.
+// Lever stands in for a site with a finished adapter, whatever the registry says today.
 vi.mock('../../src/shared/atsSites', async (original) => ({
   ...(await original<typeof import('../../src/shared/atsSites')>()),
   isSupportedSite: (url: string) => url.startsWith('https://jobs.lever.co/'),

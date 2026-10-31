@@ -1,5 +1,11 @@
 import type { EngineCommand, FillData, FillReport } from '../shared/messages';
-import { updateApplication, type ApplicationStatus } from '../shared/storage/applications';
+import { statusAfterReport } from '../shared/applicationStatus';
+import {
+  getApplication,
+  updateApplication,
+  type Application,
+  type ApplicationPatch,
+} from '../shared/storage/applications';
 import { appendAuditEntry } from '../shared/storage/auditLog';
 import { blobToBase64 } from '../shared/storage/backup';
 import { getProfile } from '../shared/storage/profile';
@@ -59,10 +65,16 @@ export async function getFillData(tabId: number): Promise<FillData | null> {
   };
 }
 
-function applicationStatus(report: FillReport): ApplicationStatus {
-  if (report.state === 'confirmation') return 'submitted';
-  if (report.phase === 'paused' || report.phase === 'asking') return 'waiting_on_you';
-  return report.phase === 'filled' ? 'needs_review' : 'in_progress';
+const MAX_DETAIL_LENGTH = 200;
+
+// Page text is only ever a stand-in. HiringCafe context or the user's own edit stays.
+function detailsPatch(application: Application, report: FillReport): ApplicationPatch {
+  if (application.detailsSource !== 'application_page' || !report.jobDetails) return {};
+  const { title, company } = report.jobDetails;
+  return {
+    ...(!application.jobTitle && title && { jobTitle: title.slice(0, MAX_DETAIL_LENGTH) }),
+    ...(!application.company && company && { company: company.slice(0, MAX_DETAIL_LENGTH) }),
+  };
 }
 
 export async function handleFillReport(tabId: number, report: FillReport): Promise<void> {
@@ -79,13 +91,29 @@ export async function handleFillReport(tabId: number, report: FillReport): Promi
 
   const { applicationId } = session;
   if (!applicationId) return;
-  await updateApplication(applicationId, { status: applicationStatus(report) });
-  for (const { field, status, profileKey } of report.results) {
+  const application = await getApplication(applicationId);
+  if (!application) return;
+  const status = statusAfterReport(application.status, report);
+  await updateApplication(applicationId, { status, ...detailsPatch(application, report) });
+  if (report.state !== session.pageState) {
+    await appendAuditEntry(applicationId, 'page_state', {
+      page: report.state,
+      flag: report.pausedReason,
+    });
+  }
+  if (status !== application.status) {
+    await appendAuditEntry(applicationId, 'status_change', {
+      from: application.status,
+      to: status,
+    });
+  }
+  for (const { field, status: fillStatus, profileKey, maskedValue } of report.results) {
     await appendAuditEntry(applicationId, 'fill_result', {
       field,
-      status,
+      status: fillStatus,
       mappedTo: profileKey,
       page: report.state,
+      ...(maskedValue && { value: maskedValue }),
     });
   }
 }

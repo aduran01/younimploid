@@ -95,6 +95,9 @@ export function App() {
       onLink={(applicationId) => {
         if (tabId !== null) void sendMessage({ type: 'LINK_APPLICATION', tabId, applicationId });
       }}
+      onMarkSubmitted={(applicationId) => {
+        void sendMessage({ type: 'MARK_SUBMITTED', applicationId });
+      }}
       onOpenSettings={() => void sendMessage({ type: 'OPEN_SETTINGS' })}
     />
   );

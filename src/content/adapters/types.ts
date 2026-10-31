@@ -23,6 +23,11 @@ export interface FillValue {
 
 export type NavResult = 'navigated' | 'not_found';
 
+export interface JobDetails {
+  title: string;
+  company: string;
+}
+
 export interface ResumeUpload {
   file: File;
 }
@@ -37,4 +42,6 @@ export interface AtsAdapter {
   fill(input: FillValue): Promise<FillResult>;
   attachResume?(doc: Document, upload: ResumeUpload): Promise<FillResult | null>;
   nextStep?(doc: Document): Promise<boolean>;
+  // The application page's own title and company, for tracker entries without HiringCafe context.
+  readJobDetails?(doc: Document): JobDetails | null;
 }

@@ -1,6 +1,8 @@
 // Every message between extension contexts is declared here.
 
-import type { Application } from './storage/applications';
+import type { JobDetails } from '../content/adapters/types';
+import type { Application, ApplicationStatus } from './storage/applications';
+import type { AuditEntry } from './storage/auditLog';
 import type { JobContext } from './storage/hiringCafeTabs';
 import type { Profile } from './storage/profile';
 import type { FillResult, PageState, TabSession } from './storage/tabSession';
@@ -33,6 +35,15 @@ export interface FillReport {
   phase: 'running' | 'paused' | 'asking' | 'filled';
   pausedReason: string | null;
   results: FillResult[];
+  jobDetails?: JobDetails;
+}
+
+// What the tracker may edit. Everything else about an entry belongs to the background.
+export interface TrackerEdit {
+  status?: ApplicationStatus;
+  jobTitle?: string;
+  company?: string;
+  notes?: string;
 }
 
 export type EngineCommand =
@@ -49,6 +60,10 @@ export type Message =
   | { type: 'HIGHLIGHT_FIELD'; tabId: number; ref: string }
   | { type: 'LIST_APPLICATIONS' }
   | { type: 'LINK_APPLICATION'; tabId: number; applicationId: string }
+  | { type: 'MARK_SUBMITTED'; applicationId: string }
+  | { type: 'UPDATE_APPLICATION'; applicationId: string; edit: TrackerEdit }
+  | { type: 'MERGE_APPLICATIONS'; sourceId: string; targetId: string }
+  | { type: 'LIST_AUDIT'; applicationId: string }
   | { type: 'OPEN_SETTINGS' }
   | { type: 'JOB_CONTEXT'; context: JobContext }
   | { type: 'ENGINE_READY' }
@@ -62,9 +77,11 @@ export type ResponseFor<M extends Message> = M extends { type: 'PING' }
     ? TabState
     : M extends { type: 'LIST_APPLICATIONS' }
       ? Application[]
-      : M extends { type: 'ENGINE_READY' }
-        ? FillData | null
-        : { ok: boolean };
+      : M extends { type: 'LIST_AUDIT' }
+        ? AuditEntry[]
+        : M extends { type: 'ENGINE_READY' }
+          ? FillData | null
+          : { ok: boolean };
 
 export function sendMessage<M extends Message>(message: M): Promise<ResponseFor<M>> {
   return chrome.runtime.sendMessage(message);

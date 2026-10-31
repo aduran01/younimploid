@@ -13,7 +13,7 @@ import {
 export const ORIGINS = ['hiringcafe', 'manual'] as const;
 export type Origin = (typeof ORIGINS)[number];
 
-const STATUSES = [
+export const STATUSES = [
   'in_progress',
   'waiting_on_you',
   'needs_review',
@@ -148,4 +148,56 @@ export function linkTab(id: string, tabId: number): Promise<Application | null> 
   return applyUpdate(id, ({ linkedTabIds }) => ({
     linkedTabIds: linkedTabIds.includes(tabId) ? linkedTabIds : [...linkedTabIds, tabId],
   }));
+}
+
+const STATUS_ORDER: ApplicationStatus[] = [
+  'in_progress',
+  'waiting_on_you',
+  'needs_review',
+  'submitted',
+  'interview',
+  'offer',
+  'rejected',
+  'withdrawn',
+];
+
+// The target stays. Anything it lacks comes from the source, and the furthest status wins.
+export function mergeRecords(source: Application, target: Application): ApplicationPatch {
+  const notes = [target.notes, source.notes].filter(Boolean).join('\n');
+  const status =
+    STATUS_ORDER.indexOf(source.status) > STATUS_ORDER.indexOf(target.status)
+      ? source.status
+      : target.status;
+  const jobTitle = target.jobTitle || source.jobTitle;
+  const company = target.company || source.company;
+  const atsSource = target.atsSource || source.atsSource;
+  return {
+    status,
+    notes,
+    linkedTabIds: [...new Set([...target.linkedTabIds, ...source.linkedTabIds])],
+    ...(jobTitle && { jobTitle }),
+    ...(company && { company }),
+    ...(atsSource && { atsSource }),
+  };
+}
+
+export function mergeApplications(sourceId: string, targetId: string): Promise<Application | null> {
+  return serialized(KEYS.applications, async () => {
+    const applications = await listApplications();
+    const source = applications.find(({ id }) => id === sourceId);
+    const target = applications.find(({ id }) => id === targetId);
+    if (!source || !target || sourceId === targetId) return null;
+    const merged = normalizeApplication({
+      ...target,
+      ...mergeRecords(source, target),
+      updatedAt: Date.now(),
+    });
+    if (!merged) return null;
+    const next = applications.flatMap((application) => {
+      if (application.id === sourceId) return [];
+      return [application.id === targetId ? merged : application];
+    });
+    await write('local', KEYS.applications, next);
+    return merged;
+  });
 }

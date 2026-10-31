@@ -61,3 +61,14 @@ export function appendAuditEntry(
     await write('local', KEYS.auditLog, next);
   });
 }
+
+// Keeps an application's history when its entry is merged into another.
+export function reassignAuditEntries(fromId: string, toId: string): Promise<void> {
+  return serialized(KEYS.auditLog, async () => {
+    const entries = await listAuditEntries();
+    const next = entries.map((entry) =>
+      entry.applicationId === fromId ? { ...entry, applicationId: toId } : entry,
+    );
+    await write('local', KEYS.auditLog, next);
+  });
+}

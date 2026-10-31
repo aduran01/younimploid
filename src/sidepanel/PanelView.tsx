@@ -1,3 +1,4 @@
+import { STATUS_LABELS as APPLICATION_LABELS, canMarkSubmitted } from '../shared/applicationStatus';
 import type { TabState } from '../shared/messages';
 import type { Application } from '../shared/storage/applications';
 import type { FillResult, FillStatus, TabSession } from '../shared/storage/tabSession';
@@ -45,6 +46,7 @@ export interface PanelActions {
   onAnswerFormQuestion: (isForm: boolean) => void;
   onHighlight: (ref: string) => void;
   onLink: (applicationId: string) => void;
+  onMarkSubmitted: (applicationId: string) => void;
   onOpenSettings: () => void;
 }
 
@@ -85,7 +87,7 @@ function applicationLabel({ jobTitle, company, jobUrl }: Application): string {
 
 export function PanelView(props: PanelViewProps) {
   const { state, openApplications, error, onFill, onContinue, onAnswerFormQuestion } = props;
-  const { onHighlight, onLink, onOpenSettings } = props;
+  const { onHighlight, onLink, onMarkSubmitted, onOpenSettings } = props;
   const session = state?.session ?? null;
   const application = state?.application ?? null;
   const status = panelStatus(session);
@@ -94,6 +96,9 @@ export function PanelView(props: PanelViewProps) {
     : '';
   const showFill = state !== null && (!session || !session.engineActive || session.accessNeeded);
   const atWall = session !== null && WALL_STATES.includes(session.pageState);
+  const canMark = application !== null && canMarkSubmitted(application.status);
+  const looksSubmitted = canMark && session?.pageState === 'confirmation';
+  const waiting = openApplications.filter((entry) => entry.status === 'waiting_on_you').length;
 
   return (
     <main className="flex min-h-screen flex-col gap-3 p-3 text-sm">
@@ -110,6 +115,8 @@ export function PanelView(props: PanelViewProps) {
 
       {session?.origin === 'hiringcafe' && <p>Opened from HiringCafe</p>}
       {job && <p className="break-words">{job}</p>}
+      {application && <p>Tracker: {APPLICATION_LABELS[application.status]}</p>}
+      {waiting > 0 && <p>Waiting on you: {waiting}</p>}
       {session?.wouldAutoStart && !session.engineActive && (
         <p>Would start autofill on this site.</p>
       )}
@@ -125,6 +132,16 @@ export function PanelView(props: PanelViewProps) {
             </Button>
           </div>
         </div>
+      )}
+
+      {looksSubmitted && <p className="font-semibold">Looks submitted. Mark as submitted?</p>}
+      {canMark && (
+        <Button
+          variant={looksSubmitted ? 'primary' : 'secondary'}
+          onClick={() => onMarkSubmitted(application.id)}
+        >
+          Mark as submitted
+        </Button>
       )}
 
       {atWall && session?.engineActive && (

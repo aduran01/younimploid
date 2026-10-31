@@ -1,5 +1,6 @@
 import type { AtsAdapter, FieldCandidate } from '../adapters/types';
 import type { FillResult } from '../../shared/storage/tabSession';
+import { maskValue } from '../../shared/mask';
 import type { Profile } from '../../shared/storage/profile';
 import { canFillChoice, readValue, result, sameValue } from './fill';
 import { isConsentField, isResumeInput, matchField, profileValue } from './matcher';
@@ -103,7 +104,10 @@ export async function fillPage(input: FillPageInput): Promise<FillPageOutput> {
     if (plan.action !== 'fill') continue;
 
     const filled = await adapter.fill({ field, value: plan.value, profileKey: plan.profileKey });
-    results.push(filled);
+    // Only the masked form leaves this page, so the audit log can't hold a personal value.
+    results.push(
+      filled.status === 'filled' ? { ...filled, maskedValue: maskValue(plan.value) } : filled,
+    );
     if (filled.status === 'filled') {
       written.push({ field, value: readValue(field), index: results.length - 1 });
     }

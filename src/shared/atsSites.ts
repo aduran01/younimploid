@@ -1,4 +1,4 @@
-export type AdapterStatus = 'planned' | 'supported';
+export type AdapterStatus = 'planned' | 'verified';
 
 interface AtsSite {
   source: string;
@@ -32,8 +32,13 @@ const SITES: Omit<AtsSite, 'status'>[] = [
   { source: 'jobvite', hosts: ['jobs.jobvite.com'], domains: [] },
 ];
 
-// Every site stays planned until its adapter is built and verified.
-export const ATS_SITES: AtsSite[] = SITES.map((site) => ({ ...site, status: 'planned' }));
+// A site stays planned until its adapter's fixture tests pass.
+const VERIFIED = new Set(['greenhouse', 'lever']);
+
+export const ATS_SITES: AtsSite[] = SITES.map((site) => ({
+  ...site,
+  status: VERIFIED.has(site.source) ? 'verified' : 'planned',
+}));
 
 // The optional host permissions asked for from Settings (D-028).
 export const ATS_HOST_PATTERNS: string[] = ATS_SITES.flatMap(({ hosts, domains }) => [
@@ -61,5 +66,5 @@ export function findAtsSource(url: string): string | null {
 }
 
 export function isSupportedSite(url: string): boolean {
-  return findSite(url)?.status === 'supported';
+  return findSite(url)?.status === 'verified';
 }

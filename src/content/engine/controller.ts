@@ -24,10 +24,15 @@ export interface Controller {
 }
 
 export function createController(deps: ControllerDeps): Controller {
-  const { doc, adapter, data, resume, report, settle } = deps;
+  const { doc, adapter, data, resume, settle } = deps;
+  const report = (next: FillReport) => {
+    const jobDetails = adapter.readJobDetails?.(doc);
+    deps.report(jobDetails ? { ...next, jobDetails } : next);
+  };
   const classify = (): PageClassification => (adapter.classifyPage ?? classifyPage)(doc);
   let phase: 'waiting' | 'filling' | 'finished' = 'waiting';
   let declined = false;
+  let triedForm = false;
 
   const fill = async (classification: PageClassification, confirmed: boolean) => {
     phase = 'filling';
@@ -78,6 +83,14 @@ export function createController(deps: ControllerDeps): Controller {
         phase = 'finished';
         report({ ...classification, phase: 'filled', pausedReason: null, results: [] });
       } else {
+        // Once per page. A real navigation brings a fresh engine, a same-page one a DOM change.
+        if (state === 'job_description' && adapter.goToApplicationForm && !triedForm) {
+          triedForm = true;
+          if ((await adapter.goToApplicationForm(doc)) === 'navigated') {
+            report({ ...classification, phase: 'running', pausedReason: null, results: [] });
+            return;
+          }
+        }
         report({
           ...classification,
           phase: 'paused',

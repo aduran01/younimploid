@@ -54,14 +54,21 @@ function isChallengeVisible(element: Element): boolean {
   return element.getAttribute('data-size') !== 'invisible';
 }
 
-export function classifyPage(doc: Document): PageClassification {
+export interface ClassifyOptions {
+  // For a site whose widget is on every form and shows nothing until the user submits.
+  // A visible challenge frame still matches its own selector, so it always stops the fill.
+  ignoreChallenge?: (element: Element) => boolean;
+}
+
+export function classifyPage(doc: Document, options: ClassifyOptions = {}): PageClassification {
   const done = (state: PageState, evidence: string[], ambiguous = false): PageClassification => ({
     state,
     ambiguous,
     evidence,
   });
 
-  if (Array.from(doc.querySelectorAll(CHALLENGE_SELECTOR)).some(isChallengeVisible)) {
+  const challenges = Array.from(doc.querySelectorAll(CHALLENGE_SELECTOR));
+  if (challenges.some((el) => isChallengeVisible(el) && !options.ignoreChallenge?.(el))) {
     return done('captcha', ['A visible challenge widget']);
   }
 

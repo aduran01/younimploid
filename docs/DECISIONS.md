@@ -227,6 +227,7 @@ Check this log before re-deciding anything. Add new entries at the bottom. Unans
 
 ## D-035: Auto-start waits for a supported adapter
 
+- **Status:** Replaced by D-039 for Greenhouse and Lever.
 - **Date:** 2026-10-31
 - **Decision:** Every site in `src/shared/atsSites.ts` is `planned`, and auto-start needs `supported`. So nothing starts by itself until an adapter ships. "Fill this application" runs the generic engine on any site the user allows.
 - **Rationale:** This follows the Session 2.1 prompt literally, and the generic engine hasn't been tried on a real application form.
@@ -236,3 +237,27 @@ Check this log before re-deciding anything. Add new entries at the bottom. Unans
 - **Date:** 2026-10-31
 - **Decision:** The classifier reads only headings and controls for wording, never body text. "Yes, this is the form" answers an ambiguous page and can't override a clear wall. No checkbox is ever ticked. Invisible reCAPTCHA doesn't count as a challenge. A visible one is detected from selectors and the iframe's `src` attribute, and nothing inside it is read or touched.
 - **Rationale:** Job descriptions contain words like "log in". Invisible reCAPTCHA sits on many ordinary forms and isn't asking the user anything, so stopping on it would block them for no reason.
+
+## D-037: Two engine hooks for adapters
+
+- **Date:** 2026-10-31
+- **Decision:** The controller calls `goToApplicationForm` once per page on a description page. `classifyPage` takes an optional `ignoreChallenge`, and Lever uses it for its idle `.h-captcha` placeholder. Adapters may also offer `readJobDetails`. Approved by the user.
+- **Rationale:** No adapter could leave a description page without the first. In real Chrome, Lever's placeholder is on every form with zero height and hidden iframes, so every form read as a wall. A visible challenge frame still matches its own selector and stops the fill.
+
+## D-038: Greenhouse dropdowns are flagged, not filled
+
+- **Date:** 2026-10-31
+- **Decision:** Greenhouse dropdowns (React-Select comboboxes) report "Choose this one yourself" and receive no text. This includes Country, Location and the EEO questions.
+- **Rationale:** Tried on a live form: synthetic mouse and keyboard events did not open the menu, and typed text isn't a selection, so "filled" would be false. Trusted input events would need the debugger permission, which isn't worth asking for.
+
+## D-039: Registry status is `verified`, and auto-start follows it
+
+- **Date:** 2026-10-31
+- **Decision:** `supported` is renamed `verified`, as the adapter prompt words it. Greenhouse and Lever are verified, which turns on auto-start there once the sites are allowed in Settings. This replaces D-035 for those two sites.
+- **Rationale:** The prompt marks a site after its fixture tests pass. Those tests don't prove behavior on a live form: the real-posting check with the user is still due.
+
+## D-040: Tracker rules
+
+- **Date:** 2026-10-31
+- **Decision:** A confirmation page never sets `submitted`: the panel asks and the user confirms. The engine only moves between in_progress, waiting_on_you and needs_review. The tracker goes through background messages, narrowing D-030. Filled values are masked in the content script, before they leave the page. Values under 8 characters are fully masked, a stricter rule than the prompt's "last 4", since the last 4 of a short name is most of it.
+- **Rationale:** Wording alone can falsely match a confirmation page. The background also writes applications, and the storage queue is per context, so a second writer could lose updates.

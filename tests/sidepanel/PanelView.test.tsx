@@ -33,6 +33,7 @@ function render(state: TabState | null, applications: Application[] = []): strin
       onAnswerFormQuestion={noop}
       onHighlight={noop}
       onLink={noop}
+      onMarkSubmitted={noop}
       onOpenSettings={noop}
     />,
   );
@@ -190,5 +191,51 @@ describe('PanelView', () => {
     expect(html).toContain('Opened from HiringCafe');
     expect(html).toContain('Engineer at Acme');
     expect(html).toContain('Would start autofill');
+  });
+});
+
+describe('tracker summary', () => {
+  const application: Application = {
+    id: 'a',
+    jobUrl: 'https://a.example',
+    applyUrl: 'https://a.example',
+    origin: 'manual',
+    status: 'needs_review',
+    detailsSource: 'manual',
+    createdAt: 1,
+    updatedAt: 1,
+    notes: '',
+    linkedTabIds: [],
+  };
+
+  it('asks before marking a confirmation page as submitted', () => {
+    const html = render({
+      session: { ...SESSION, pageState: 'confirmation' },
+      application,
+      pageUrl: null,
+    });
+    expect(html).toContain('Looks submitted. Mark as submitted?');
+  });
+
+  it('always offers the button before submitting, without the prompt', () => {
+    const html = render({ session: SESSION, application, pageUrl: null });
+    expect(html).toContain('Mark as submitted');
+    expect(html).not.toContain('Looks submitted');
+    expect(html).toContain('Tracker: Needs review');
+  });
+
+  it('stops offering it once submitted', () => {
+    const html = render({
+      session: { ...SESSION, pageState: 'confirmation' },
+      application: { ...application, status: 'submitted' },
+      pageUrl: null,
+    });
+    expect(html).not.toContain('Mark as submitted');
+  });
+
+  it('counts entries waiting on the user', () => {
+    const waiting = { ...application, status: 'waiting_on_you' as const };
+    const html = render({ session: null, application: null, pageUrl: null }, [waiting, waiting]);
+    expect(html).toContain('Waiting on you: 2');
   });
 });

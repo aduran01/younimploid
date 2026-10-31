@@ -1,11 +1,19 @@
+import { canMarkSubmitted } from '../shared/applicationStatus';
 import { isHiringCafeUrl } from '../shared/hiringCafe';
-import type { Message, ResponseFor, TabState } from '../shared/messages';
+import type { Message, ResponseFor, TabState, TrackerEdit } from '../shared/messages';
 import {
   createApplication,
   getApplication,
   linkTab,
   listApplications,
+  mergeApplications,
+  updateApplication,
 } from '../shared/storage/applications';
+import {
+  appendAuditEntry,
+  listAuditEntries,
+  reassignAuditEntries,
+} from '../shared/storage/auditLog';
 import { saveJobContext } from '../shared/storage/hiringCafeTabs';
 import { getTabSession, startTabSession, updateTabSession } from '../shared/storage/tabSession';
 import {
@@ -55,6 +63,55 @@ async function linkApplication(tabId: number, applicationId: string): Promise<Ta
   return getTabState(tabId);
 }
 
+// Submitting stays the user's act. This only records that they say it happened.
+async function markSubmitted(applicationId: string): Promise<boolean> {
+  const application = await getApplication(applicationId);
+  if (!application || !canMarkSubmitted(application.status)) return false;
+  await updateApplication(applicationId, { status: 'submitted' });
+  await appendAuditEntry(applicationId, 'status_change', {
+    from: application.status,
+    to: 'submitted',
+  });
+  return true;
+}
+
+async function editApplication(applicationId: string, edit: TrackerEdit): Promise<boolean> {
+  const before = await getApplication(applicationId);
+  if (!before) return false;
+  const { status, jobTitle, company, notes } = edit;
+  const typedDetails = jobTitle !== undefined || company !== undefined;
+  const updated = await updateApplication(applicationId, {
+    ...(status !== undefined && { status }),
+    ...(jobTitle !== undefined && { jobTitle }),
+    ...(company !== undefined && { company }),
+    ...(notes !== undefined && { notes }),
+    ...(typedDetails && { detailsSource: 'manual' as const }),
+  });
+  if (!updated) return false;
+  if (updated.status !== before.status) {
+    await appendAuditEntry(applicationId, 'status_change', {
+      from: before.status,
+      to: updated.status,
+    });
+  }
+  return true;
+}
+
+// Tabs still working on the merged entry move over with it.
+async function mergeEntries(sourceId: string, targetId: string): Promise<boolean> {
+  const source = await getApplication(sourceId);
+  const merged = await mergeApplications(sourceId, targetId);
+  if (!source || !merged) return false;
+  await reassignAuditEntries(sourceId, targetId);
+  for (const tabId of source.linkedTabIds) {
+    const session = await getTabSession(tabId);
+    if (session?.applicationId === sourceId) {
+      await updateTabSession(tabId, { applicationId: targetId });
+    }
+  }
+  return true;
+}
+
 export function handleMessage<M extends Message>(
   message: M,
   sender?: chrome.runtime.MessageSender,
@@ -89,6 +146,14 @@ export async function handleMessage(
       return listApplications();
     case 'LINK_APPLICATION':
       return linkApplication(message.tabId, message.applicationId);
+    case 'MARK_SUBMITTED':
+      return { ok: await markSubmitted(message.applicationId) };
+    case 'UPDATE_APPLICATION':
+      return { ok: await editApplication(message.applicationId, message.edit) };
+    case 'MERGE_APPLICATIONS':
+      return { ok: await mergeEntries(message.sourceId, message.targetId) };
+    case 'LIST_AUDIT':
+      return listAuditEntries(message.applicationId);
     case 'OPEN_SETTINGS':
       await chrome.runtime.openOptionsPage();
       return { ok: true };

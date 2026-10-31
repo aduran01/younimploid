@@ -1,6 +1,6 @@
 # Architecture
 
-How younimploid fits together. Product requirements are in [SPEC.md](SPEC.md); the reasons behind choices are in [DECISIONS.md](DECISIONS.md). Site adapters and AI are planned; the rest of this page exists.
+How younimploid fits together. Product requirements are in [SPEC.md](SPEC.md); the reasons behind choices are in [DECISIONS.md](DECISIONS.md). The Ashby and later adapters and AI are planned; the rest of this page exists.
 
 ## Components
 
@@ -67,4 +67,4 @@ Docs and repo realignment (1.2), storage (1.3), the profile page (1.4), the side
 
 ### Phase 2: Autofill
 
-The generic engine (2.1) and page classifier with sign-in handoff (2.2) are built, in `src/content/engine/`. The background injects `src/content/atsEngine.ts` on each navigation once a tab's engine is active. It asks for the profile and resume with `ENGINE_READY`, reports with `FILL_REPORT`, and takes panel actions through `ENGINE_COMMAND`. Order on a page: classify, attach resume, settle, fill with a wall check before each field, settle, re-read what was written. There is no submit path.
+The generic engine (2.1), page classifier with sign-in handoff (2.2), Greenhouse and Lever adapters and the tracker (2.6) are built. The engine is in `src/content/engine/`. The background injects `src/content/atsEngine.ts` on each navigation once a tab's engine is active. It asks for the profile and resume with `ENGINE_READY`, reports with `FILL_REPORT`, and takes panel actions through `ENGINE_COMMAND`. Order on a page: classify, go to the form once if this is a description page, attach resume, settle, fill with a wall check before each field, settle, re-read what was written. There is no submit path. The tracker reads and writes through background messages, so applications have one writer.

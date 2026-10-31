@@ -63,7 +63,9 @@ describe('engine background', () => {
     expect(session?.fillResults).toHaveLength(1);
     expect(session?.pageState).toBe('application_form');
     expect((await getApplication(application.id))?.status).toBe('needs_review');
-    const [entry] = await listAuditEntries(application.id);
+    const entry = (await listAuditEntries(application.id)).find(
+      ({ action }) => action === 'fill_result',
+    );
     expect(entry).toMatchObject({
       action: 'fill_result',
       details: { field: 'Email', status: 'filled', mappedTo: 'email' },
@@ -86,12 +88,13 @@ describe('engine background', () => {
     expect((await getApplication(application.id))?.status).toBe('waiting_on_you');
   });
 
-  it('marks asking in the session, and a confirmation page as submitted', async () => {
+  it('marks asking in the session, and never marks a confirmation page submitted', async () => {
     const application = await activeSession();
     await handleFillReport(1, { ...REPORT, phase: 'asking', results: [] });
     expect((await getTabSession(1))?.awaitingFormAnswer).toBe(true);
     await handleFillReport(1, { ...REPORT, state: 'confirmation', results: [] });
-    expect((await getApplication(application.id))?.status).toBe('submitted');
+    expect((await getApplication(application.id))?.status).toBe('waiting_on_you');
+    expect((await getTabSession(1))?.pageState).toBe('confirmation');
   });
 
   it('ignores reports for a tab whose engine was never started', async () => {

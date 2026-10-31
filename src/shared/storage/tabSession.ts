@@ -31,6 +31,7 @@ export interface FillResult {
   // Finds the field on the current page. Null once it can't be located.
   ref: string | null;
   profileKey: string;
+  maskedValue?: string;
 }
 
 export interface TabSession {
@@ -70,6 +71,7 @@ function normalizeFillResult(raw: unknown): FillResult | null {
     note: asString(raw.note),
     ref: nullableString(raw.ref),
     profileKey: asString(raw.profileKey),
+    ...(typeof raw.maskedValue === 'string' && { maskedValue: raw.maskedValue }),
   };
 }
 
